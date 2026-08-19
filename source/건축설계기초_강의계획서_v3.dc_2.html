@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="_ds/classical-0e791a5f-6a13-49d1-acd0-84e6640ec861/styles.css">
+<script src="_ds/classical-0e791a5f-6a13-49d1-acd0-84e6640ec861/_ds_bundle.js"></script>
+<script src="./image-slot.js"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&family=Noto+Serif+KR:wght@200;300;400;600&display=swap">
+<style>
+:root{
+  --font-heading:"Cormorant Garamond","Gowun Batang",serif;
+  --font-body:"Lora","Noto Serif KR",serif;
+  --sheet-line: color-mix(in srgb, var(--color-text) 22%, transparent);
+}
+body{margin:0;-webkit-font-smoothing:antialiased}
+a{color:var(--color-accent-700);text-decoration:none}
+a:hover{color:var(--color-accent);text-decoration:underline}
+summary::-webkit-details-marker{display:none}
+</style>
+</helmet>
+
+<div style="background:var(--color-bg);color:var(--color-text);font-family:var(--font-body);min-height:100vh;background-image:linear-gradient(var(--color-divider) 1px,transparent 1px),linear-gradient(90deg,var(--color-divider) 1px,transparent 1px);background-size:calc(var(--space-8)*2) calc(var(--space-8)*2);background-position:-1px -1px">
+
+  <div style="max-width:1280px;margin:0 auto;background:var(--color-bg);border-left:1px solid var(--sheet-line);border-right:1px solid var(--sheet-line)">
+
+    <div style="display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:stretch;border-bottom:1px solid var(--sheet-line);position:sticky;top:0;background:var(--color-bg);z-index:20">
+      <div style="display:flex;align-items:center;gap:var(--space-6);padding:var(--space-3) var(--space-6)">
+        <div style="font-family:var(--font-heading);font-size:17px;letter-spacing:0.02em">연성대학교 건축학과</div>
+        <div style="display:flex;gap:var(--space-4);font-size:12.5px">
+          <a href="#a01">개요</a>
+          <a href="#a02">과제</a>
+          <a href="#a03">주차별</a>
+          <a href="#a04">평가</a>
+          <a href="#a05">사례</a>
+          <a href="#a06">운영</a>
+          <a href="#a07">문의</a>
+        </div>
+      </div>
+      <div style="display:flex;align-items:center;padding:0 var(--space-6);border-left:1px solid var(--sheet-line);font-family:var(--font-heading);font-size:12px;letter-spacing:0.16em;text-transform:uppercase;color:var(--color-accent-700);font-feature-settings:'tnum'">SYLLABUS · SHEET A-00</div>
+    </div>
+
+    <section style="border-bottom:1px solid var(--sheet-line)">
+      <div style="padding:calc(var(--space-8)*1.6) var(--space-8) var(--space-8)">
+        <div style="display:flex;align-items:center;gap:var(--space-3);font-family:var(--font-heading);font-size:12px;letter-spacing:0.18em;text-transform:uppercase;color:var(--color-accent-700);font-feature-settings:'tnum';margin-bottom:var(--space-6)">
+          <span style="width:calc(var(--space-8)*1.2);height:1px;background:var(--color-accent)"></span>
+          <span>{{ semester }} · 1학년 설계 스튜디오 · 15주</span>
+        </div>
+        <h1 style="font-size:clamp(48px,6vw,84px);font-weight:400;line-height:1.04;letter-spacing:-0.03em;margin:0 0 var(--space-6);max-width:22em">건축설계기초 Ⅱ<br><span style="color:color-mix(in srgb, var(--color-text) 45%, transparent)">덩어리를 다루고, 그 안으로 들어간다</span></h1>
+        <div style="display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,0.85fr);gap:calc(var(--space-8)*1.4);align-items:start">
+          <p style="text-align:justify;text-wrap:pretty;font-size:17px;line-height:1.95;margin:0;color:color-mix(in srgb, var(--color-text) 84%, transparent)">설계를 처음 접하는 학생을 위한 두 개의 과제로 이루어진 스튜디오입니다. 앞의 8주는 연성대학교 문화관 앞마당에서 9m 큐브를 조건으로 파빌리온을 만들며 <strong style="font-weight:400;color:var(--color-text)">형태 · 재료 · 휴먼스케일</strong>로 매스를 다룹니다. 뒤의 7주는 안양시 만안구 안양동 934-11의 실제 대지에 쉐어하우스를 계획하며 <strong style="font-weight:400;color:var(--color-text)">동선과 공간</strong>을 다룹니다. 덩어리를 다루는 법을 먼저 익히고, 그 다음에 그 안으로 들어갑니다.</p>
+          <div style="border-top:1px solid var(--color-text);padding-top:var(--space-3)">
+            <sc-for list="{{ titleblock }}" as="t" hint-placeholder-count="4">
+              <div style="display:grid;grid-template-columns:minmax(0,86px) minmax(0,1fr);gap:var(--space-3);padding:var(--space-2) 0;border-bottom:1px solid var(--color-divider)">
+                <div style="font-family:var(--font-heading);font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:color-mix(in srgb, var(--color-text) 55%, transparent);padding-top:3px">{{ t.k }}</div>
+                <div style="font-size:14px;line-height:1.6;font-feature-settings:'tnum'">{{ t.v }}</div>
+              </div>
+            </sc-for>
+          </div>
+        </div>
+      </div>
+      <figure style="margin:0;border-top:1px solid var(--sheet-line);padding:var(--space-8)">
+        <image-slot id="v2hero" class="plate" shape="rect" style="width:100%;height:auto;aspect-ratio:21/8;min-width:0" placeholder="표지 도판 — 지난 학기 모형·도면 사진"></image-slot>
+        <figcaption style="display:flex;justify-content:space-between;gap:var(--space-6);margin-top:var(--space-3);font-feature-settings:'tnum'">
+          <span>Fig. 01 — 지난 학기 파빌리온 1:20 모형</span>
+          <span style="display:flex;align-items:center;gap:8px">
+            <span style="display:block;width:60px;height:6px;border:1px solid var(--color-text);background:linear-gradient(90deg,var(--color-text) 50%,transparent 50%)"></span>
+            <span>0 ─ 1m</span>
+          </span>
+        </figcaption>
+      </figure>
+    </section>
+
+    <section id="a01" style="border-bottom:1px solid var(--sheet-line)">
+      <div style="display:flex;align-items:baseline;justify-content:space-between;gap:var(--space-6);padding:var(--space-4) var(--space-8);border-bottom:1px solid var(--color-divider)">
+        <h2 style="font-size:30px;font-weight:400;margin:0">교과목 개요와 여섯 개의 키워드</h2>
+        <div style="font-family:var(--font-heading);font-size:11.5px;letter-spacing:0.16em;color:var(--color-accent-700);font-feature-settings:'tnum'">A-01</div>
+      </div>
+      <div style="display:grid;grid-template-columns:minmax(0,0.7fr) minmax(0,1.3fr)">
+        <div style="padding:var(--space-8);border-right:1px solid var(--color-divider)">
+          <sc-for list="{{ info }}" as="row" hint-placeholder-count="8">
+            <div style="display:grid;grid-template-columns:minmax(0,80px) minmax(0,1fr);gap:var(--space-3);padding:var(--space-3) 0;border-bottom:1px solid var(--color-divider)">
+              <div style="font-family:var(--font-heading);font-size:12px;letter-spacing:0.06em;color:color-mix(in srgb, var(--color-text) 60%, transparent);padding-top:2px">{{ row.k }}</div>
+              <div style="font-size:13.5px;line-height:1.7;font-feature-settings:'tnum';color:color-mix(in srgb, var(--color-text) 88%, transparent)">{{ row.v }}</div>
+            </div>
+          </sc-for>
+        </div>
+        <div style="display:grid;grid-template-columns:repeat(3,minmax(0,1fr))">
+          <sc-for list="{{ goals }}" as="g" hint-placeholder-count="6">
+            <div style="padding:var(--space-6);border-right:1px solid var(--color-divider);border-bottom:1px solid var(--color-divider)">
+              <div style="display:flex;align-items:baseline;justify-content:space-between;gap:var(--space-3);margin-bottom:var(--space-3)">
+                <div style="font-family:var(--font-heading);font-size:34px;font-weight:400;color:color-mix(in srgb, var(--color-accent) 45%, transparent);font-feature-settings:'tnum';line-height:1">{{ g.n }}</div>
+                <div style="font-family:var(--font-heading);font-size:10.5px;letter-spacing:0.14em;text-transform:uppercase;color:color-mix(in srgb, var(--color-text) 45%, transparent)">{{ g.part }}</div>
+              </div>
+              <div style="font-family:var(--font-heading);font-size:19px;margin-bottom:2px">{{ g.title }}</div>
+              <div style="font-size:11px;letter-spacing:0.08em;text-transform:uppercase;color:var(--color-accent-700);margin-bottom:8px">{{ g.en }}</div>
+              <p style="text-align:justify;font-size:13.5px;line-height:1.8;margin:0 0 var(--space-3);color:color-mix(in srgb, var(--color-text) 76%, transparent)">{{ g.body }}</p>
+              <p style="font-size:12.5px;line-height:1.7;margin:0;padding-top:var(--space-2);border-top:1px solid var(--color-divider);color:var(--color-accent-700)">{{ g.ask }}</p>
+            </div>
+          </sc-for>
+        </div>
+      </div>
+    </section>
+
+    <section id="a02" style="border-bottom:1px solid var(--sheet-line)">
+      <div style="display:flex;align-items:baseline;justify-content:space-between;gap:var(--space-6);padding:var(--space-4) var(--space-8);border-bottom:1px solid var(--color-divider)">
+        <h2 style="font-size:30px;font-weight:400;margin:0">두 개의 과제</h2>
+        <div style="font-family:var(--font-heading);font-size:11.5px;letter-spacing:0.16em;color:var(--color-accent-700);font-feature-settings:'tnum'">A-02</div>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(2,minmax(0,1fr))">
+        <sc-for list="{{ projects }}" as="p" hint-placeholder-count="2">
+          <div style="padding:var(--space-8);border-right:1px solid var(--color-divider)">
+            <div style="display:flex;align-items:baseline;justify-content:space-between;gap:var(--space-4);margin-bottom:var(--space-4);font-family:var(--font-heading);font-size:11.5px;letter-spacing:0.14em;text-transform:uppercase;font-feature-settings:'tnum'">
+              <span style="color:var(--color-accent-700)">{{ p.tag }}</span>
+              <span style="color:color-mix(in srgb, var(--color-text) 55%, transparent)">{{ p.weight }}</span>
+            </div>
+            <div style="display:flex;align-items:baseline;gap:var(--space-4);margin-bottom:var(--space-4)">
+              <div style="font-family:var(--font-heading);font-size:64px;font-weight:400;line-height:0.9;color:color-mix(in srgb, var(--color-accent) 40%, transparent);font-feature-settings:'tnum'">{{ p.no }}</div>
+              <h3 style="font-size:28px;font-weight:400;margin:0">{{ p.title }}</h3>
+            </div>
+            <image-slot id="{{ p.slot }}" class="plate" shape="rect" style="width:100%;height:auto;aspect-ratio:16/9;min-width:0" placeholder="{{ p.slotLabel }}"></image-slot>
+            <p style="text-align:justify;font-size:14.5px;line-height:1.9;margin:var(--space-4) 0 0;color:color-mix(in srgb, var(--color-text) 82%, transparent)">{{ p.body }}</p>
+            <hr class="hr">
+            <sc-for list="{{ p.specs }}" as="s" hint-placeholder-count="5">
+              <div style="display:grid;grid-template-columns:minmax(0,74px) minmax(0,1fr);gap:var(--space-3);padding:6px 0;border-bottom:1px solid var(--color-divider);font-size:13px;line-height:1.7">
+                <span style="font-family:var(--font-heading);font-size:11.5px;letter-spacing:0.1em;text-transform:uppercase;color:var(--color-accent-700);padding-top:3px">{{ s.k }}</span>
+                <span style="color:color-mix(in srgb, var(--color-text) 82%, transparent);font-feature-settings:'tnum'">{{ s.v }}</span>
+              </div>
+            </sc-for>
+          </div>
+        </sc-for>
+      </div>
+      <div style="padding:var(--space-3) var(--space-8);border-top:1px solid var(--color-divider);border-bottom:1px solid var(--color-divider);font-family:var(--font-heading);font-size:11.5px;letter-spacing:0.16em;text-transform:uppercase;color:var(--color-accent-700)">두 과제를 잇는 세 개의 다리</div>
+      <div style="display:grid;grid-template-columns:repeat(3,minmax(0,1fr))">
+        <sc-for list="{{ bridges }}" as="b" hint-placeholder-count="3">
+          <div style="padding:var(--space-6);border-right:1px solid var(--color-divider)">
+            <div style="display:flex;align-items:baseline;gap:var(--space-3);margin-bottom:var(--space-2)">
+              <span style="font-family:var(--font-heading);font-size:19px;color:var(--color-accent-700)">{{ b.from }}</span>
+              <span style="color:color-mix(in srgb, var(--color-text) 40%, transparent)">→</span>
+              <span style="font-family:var(--font-heading);font-size:19px">{{ b.to }}</span>
+            </div>
+            <p style="text-align:justify;font-size:13.5px;line-height:1.85;margin:0;color:color-mix(in srgb, var(--color-text) 78%, transparent)">{{ b.body }}</p>
+          </div>
+        </sc-for>
+      </div>
+    </section>
+
+    <section id="a03" style="border-bottom:1px solid var(--sheet-line)">
+      <div style="display:flex;align-items:baseline;justify-content:space-between;gap:var(--space-6);padding:var(--space-4) var(--space-8);border-bottom:1px solid var(--color-divider)">
+        <h2 style="font-size:30px;font-weight:400;margin:0">주차별 수업 계획</h2>
+        <div style="display:flex;align-items:baseline;gap:var(--space-6);font-feature-settings:'tnum'">
+          <span class="text-muted" style="font-size:12.5px">15주 · 전체 크리틱과 데스크 크리틱 병행</span>
+          <span style="font-family:var(--font-heading);font-size:11.5px;letter-spacing:0.16em;color:var(--color-accent-700)">A-03</span>
+        </div>
+      </div>
+      <div style="display:flex;align-items:stretch;padding:var(--space-4) var(--space-8);border-bottom:1px solid var(--color-divider);gap:1px">
+        <sc-for list="{{ weeks }}" as="w" hint-placeholder-count="15">
+          <a href="#w{{ w.n }}" style="flex:1 1 0;min-width:0;text-align:center;padding:var(--space-2) 0;border-top:2px solid var(--color-accent-300);border-left:1px solid var(--color-divider);font-family:var(--font-heading);font-size:12px;font-feature-settings:'tnum';color:color-mix(in srgb, var(--color-text) 70%, transparent);text-decoration:none" style-hover="color:var(--color-accent-700);background:var(--color-accent-100)">{{ w.n }}</a>
+        </sc-for>
+      </div>
+      <sc-for list="{{ weeks }}" as="w" hint-placeholder-count="15">
+        <div id="w{{ w.n }}" style="display:grid;grid-template-columns:minmax(0,120px) minmax(0,230px) minmax(0,1fr) minmax(0,220px);gap:var(--space-6);padding:var(--space-4) var(--space-8);border-bottom:1px solid var(--color-divider)" style-hover="background:color-mix(in srgb, var(--color-accent) 5%, transparent)">
+          <div>
+            <div style="font-family:var(--font-heading);font-size:26px;font-weight:400;line-height:1;font-feature-settings:'tnum';color:var(--color-accent-700)">W{{ w.pad }}</div>
+            <div style="font-size:11px;letter-spacing:0.08em;text-transform:uppercase;color:color-mix(in srgb, var(--color-text) 50%, transparent);margin-top:5px;font-feature-settings:'tnum'">{{ w.phase }}</div>
+          </div>
+          <div style="font-family:var(--font-heading);font-size:19px;line-height:1.3">{{ w.title }}</div>
+          <p style="text-align:justify;font-size:14px;line-height:1.8;margin:0;color:color-mix(in srgb, var(--color-text) 82%, transparent)">{{ w.body }}</p>
+          <div style="font-size:12.5px;line-height:1.7;color:color-mix(in srgb, var(--color-text) 62%, transparent);border-left:1px solid var(--color-divider);padding-left:var(--space-4)">{{ w.task }}</div>
+        </div>
+      </sc-for>
+    </section>
+
+    <section id="a04" style="border-bottom:1px solid var(--sheet-line)">
+      <div style="display:flex;align-items:baseline;justify-content:space-between;gap:var(--space-6);padding:var(--space-4) var(--space-8);border-bottom:1px solid var(--color-divider)">
+        <h2 style="font-size:30px;font-weight:400;margin:0">평가와 준비물</h2>
+        <div style="font-family:var(--font-heading);font-size:11.5px;letter-spacing:0.16em;color:var(--color-accent-700);font-feature-settings:'tnum'">A-04</div>
+      </div>
+      <div style="display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr)">
+        <div style="padding:var(--space-8);border-right:1px solid var(--color-divider)">
+          <div style="display:flex;gap:2px;margin-bottom:var(--space-6)">
+            <sc-for list="{{ rubric }}" as="r" hint-placeholder-count="3">
+              <div style="flex:{{ r.v }} 1 0;min-width:0;height:calc(var(--space-4));border:1px solid var(--color-accent);background:var(--color-accent-100)"></div>
+            </sc-for>
+          </div>
+          <sc-for list="{{ rubric }}" as="r" hint-placeholder-count="3">
+            <div style="display:grid;grid-template-columns:minmax(0,200px) minmax(0,1fr) minmax(0,56px);gap:var(--space-4);padding:var(--space-3) 0;border-bottom:1px solid var(--color-divider)">
+              <div style="font-family:var(--font-heading);font-size:17px">{{ r.k }}</div>
+              <div style="font-size:13px;line-height:1.7;color:color-mix(in srgb, var(--color-text) 76%, transparent)">{{ r.d }}</div>
+              <div style="text-align:right;font-family:var(--font-heading);font-size:20px;color:var(--color-accent-700);font-feature-settings:'tnum'">{{ r.v }}</div>
+            </div>
+          </sc-for>
+          <p class="text-muted" style="font-size:12.5px;line-height:1.8;margin-top:var(--space-4);text-align:justify">완성도만이 아니라 학기 동안의 변화 폭을 함께 봅니다. 매주 크리틱 기록이 남으므로, 과정 없이 결과만 제출된 작업은 높은 점수를 받기 어렵습니다.</p>
+        </div>
+        <div style="padding:var(--space-8)">
+          <h3 style="font-size:22px;font-weight:400;margin:0 0 var(--space-4)">준비물</h3>
+          <div style="display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:var(--space-6)">
+            <sc-for list="{{ supplies }}" as="s" hint-placeholder-count="6">
+              <div style="border-top:1px solid var(--color-text);padding-top:var(--space-3)">
+                <div style="font-family:var(--font-heading);font-size:17px;margin-bottom:6px">{{ s.k }}</div>
+                <p style="font-size:13px;line-height:1.8;margin:0;color:color-mix(in srgb, var(--color-text) 76%, transparent)">{{ s.v }}</p>
+              </div>
+            </sc-for>
+          </div>
+          <hr class="hr" style="margin:var(--space-8) 0 var(--space-6)">
+          <h3 style="font-size:22px;font-weight:400;margin:0 0 var(--space-4)">참고 도서</h3>
+          <div style="display:flex;flex-direction:column;gap:var(--space-2);font-size:13px;line-height:1.75">
+            <sc-for list="{{ books }}" as="b" hint-placeholder-count="4">
+              <div style="display:grid;grid-template-columns:minmax(0,26px) minmax(0,1fr);gap:var(--space-2);padding-bottom:var(--space-2);border-bottom:1px solid var(--color-divider)">
+                <span style="color:var(--color-accent);font-family:var(--font-heading);font-feature-settings:'tnum'">{{ b.n }}</span>
+                <span style="color:color-mix(in srgb, var(--color-text) 84%, transparent)">{{ b.t }}</span>
+              </div>
+            </sc-for>
+          </div>
+        </div>
+      </div>
+      <div style="border-top:1px solid var(--color-text);padding:var(--space-6) var(--space-8)">
+        <div style="display:flex;align-items:baseline;justify-content:space-between;gap:var(--space-6);margin-bottom:var(--space-4)">
+          <h3 style="font-size:22px;font-weight:400;margin:0">키워드별 성취수준</h3>
+          <span class="text-muted" style="font-size:12.5px">학기 첫 주에 배포합니다 — 무엇을 보는지 미리 아는 편이 낫습니다</span>
+        </div>
+        <div style="display:grid;grid-template-columns:minmax(0,130px) repeat(3,minmax(0,1fr));gap:var(--space-4);padding:var(--space-2) 0;border-bottom:1px solid var(--color-text);font-family:var(--font-heading);font-size:11.5px;letter-spacing:0.14em;text-transform:uppercase;color:var(--color-accent-700)">
+          <div>Keyword</div><div>A · 우수</div><div>B · 보통</div><div>C · 미흡</div>
+        </div>
+        <sc-for list="{{ levels }}" as="l" hint-placeholder-count="6">
+          <div style="display:grid;grid-template-columns:minmax(0,130px) repeat(3,minmax(0,1fr));gap:var(--space-4);padding:var(--space-3) 0;border-bottom:1px solid var(--color-divider);font-size:13px;line-height:1.7">
+            <div style="font-family:var(--font-heading);font-size:17px">{{ l.k }}</div>
+            <div style="color:color-mix(in srgb, var(--color-text) 88%, transparent)">{{ l.a }}</div>
+            <div style="color:color-mix(in srgb, var(--color-text) 74%, transparent)">{{ l.b }}</div>
+            <div style="color:color-mix(in srgb, var(--color-text) 60%, transparent)">{{ l.c }}</div>
+          </div>
+        </sc-for>
+      </div>
+    </section>
+
+    <section id="a05" style="border-bottom:1px solid var(--sheet-line)">
+      <div style="display:flex;align-items:baseline;justify-content:space-between;gap:var(--space-6);padding:var(--space-4) var(--space-8);border-bottom:1px solid var(--color-divider)">
+        <h2 style="font-size:30px;font-weight:400;margin:0">참고 사례</h2>
+        <div style="display:flex;align-items:baseline;gap:var(--space-6)">
+          <span class="text-muted" style="font-size:12.5px">그냥 보면 이미지만 봅니다 — 무엇을 볼지 함께 봅니다</span>
+          <span style="font-family:var(--font-heading);font-size:11.5px;letter-spacing:0.16em;color:var(--color-accent-700);font-feature-settings:'tnum'">A-05</span>
+        </div>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(2,minmax(0,1fr))">
+        <sc-for list="{{ refs }}" as="r" hint-placeholder-count="2">
+          <div style="padding:var(--space-8);border-right:1px solid var(--color-divider)">
+            <div style="font-family:var(--font-heading);font-size:11.5px;letter-spacing:0.14em;text-transform:uppercase;color:var(--color-accent-700);margin-bottom:var(--space-4)">{{ r.group }}</div>
+            <sc-for list="{{ r.items }}" as="i" hint-placeholder-count="5">
+              <div style="padding:var(--space-3) 0;border-bottom:1px solid var(--color-divider)">
+                <div style="font-family:var(--font-heading);font-size:18px;line-height:1.35;margin-bottom:4px">{{ i.t }}</div>
+                <p style="text-align:justify;font-size:13px;line-height:1.75;margin:0;color:color-mix(in srgb, var(--color-text) 74%, transparent)">{{ i.w }}</p>
+              </div>
+            </sc-for>
+          </div>
+        </sc-for>
+      </div>
+    </section>
+
+    <section id="a06" style="border-bottom:1px solid var(--sheet-line)">
+      <div style="display:flex;align-items:baseline;justify-content:space-between;gap:var(--space-6);padding:var(--space-4) var(--space-8);border-bottom:1px solid var(--color-divider)">
+        <h2 style="font-size:30px;font-weight:400;margin:0">수업 운영 방침</h2>
+        <div style="font-family:var(--font-heading);font-size:11.5px;letter-spacing:0.16em;color:var(--color-accent-700);font-feature-settings:'tnum'">A-06</div>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(3,minmax(0,1fr))">
+        <sc-for list="{{ rules }}" as="r" hint-placeholder-count="6">
+          <div style="padding:var(--space-6);border-right:1px solid var(--color-divider);border-bottom:1px solid var(--color-divider)">
+            <div style="display:flex;align-items:baseline;gap:var(--space-3);margin-bottom:var(--space-2)">
+              <span style="font-family:var(--font-heading);font-size:11.5px;letter-spacing:0.14em;color:var(--color-accent-700);font-feature-settings:'tnum'">{{ r.n }}</span>
+              <span style="font-family:var(--font-heading);font-size:20px">{{ r.title }}</span>
+            </div>
+            <p style="text-align:justify;font-size:13.5px;line-height:1.85;margin:0;color:color-mix(in srgb, var(--color-text) 80%, transparent)">{{ r.body }}</p>
+          </div>
+        </sc-for>
+      </div>
+    </section>
+
+    <section id="a07">
+      <div style="display:flex;align-items:baseline;justify-content:space-between;gap:var(--space-6);padding:var(--space-4) var(--space-8);border-bottom:1px solid var(--color-divider)">
+        <h2 style="font-size:30px;font-weight:400;margin:0">자주 묻는 질문</h2>
+        <div style="font-family:var(--font-heading);font-size:11.5px;letter-spacing:0.16em;color:var(--color-accent-700);font-feature-settings:'tnum'">A-07</div>
+      </div>
+      <div style="display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,0.75fr)">
+        <div style="padding:var(--space-8);border-right:1px solid var(--color-divider)">
+          <sc-for list="{{ faq }}" as="q" hint-placeholder-count="6">
+            <details style="border-bottom:1px solid var(--color-divider)">
+              <summary style="cursor:pointer;list-style:none;padding:var(--space-4) 0;font-family:var(--font-heading);font-size:18px;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,20px);gap:var(--space-4)">
+                <span>{{ q.q }}</span>
+                <span style="color:var(--color-accent);font-size:14px;text-align:right">＋</span>
+              </summary>
+              <p style="text-align:justify;font-size:13.5px;line-height:1.9;padding:0 0 var(--space-4);margin:0;color:color-mix(in srgb, var(--color-text) 80%, transparent)">{{ q.a }}</p>
+            </details>
+          </sc-for>
+        </div>
+        <div style="padding:var(--space-8)">
+          <div style="font-family:var(--font-heading);font-size:11.5px;letter-spacing:0.16em;text-transform:uppercase;color:var(--color-accent-700)">담당 교수</div>
+          <div style="font-family:var(--font-heading);font-size:30px;margin:var(--space-3) 0 var(--space-4);padding-bottom:var(--space-3);border-bottom:1px solid var(--color-text)">{{ instructor }}</div>
+          <sc-for list="{{ contact }}" as="c" hint-placeholder-count="4">
+            <div style="display:grid;grid-template-columns:minmax(0,86px) minmax(0,1fr);gap:var(--space-3);padding:var(--space-2) 0;border-bottom:1px solid var(--color-divider);font-size:13px;line-height:1.7">
+              <span style="font-family:var(--font-heading);font-size:11.5px;letter-spacing:0.1em;text-transform:uppercase;color:color-mix(in srgb, var(--color-text) 55%, transparent);padding-top:3px">{{ c.k }}</span>
+              <span style="font-feature-settings:'tnum';color:color-mix(in srgb, var(--color-text) 86%, transparent)">{{ c.v }}</span>
+            </div>
+          </sc-for>
+          <p style="font-size:12.5px;line-height:1.85;margin:var(--space-4) 0 0;text-align:justify;color:color-mix(in srgb, var(--color-text) 70%, transparent)">과제 상담은 오피스아워에 예약 없이 오시면 됩니다. 그 외 시간은 메일로 먼저 연락 주세요.</p>
+        </div>
+      </div>
+    </section>
+
+    <footer style="border-top:1px solid var(--color-text);display:grid;grid-template-columns:repeat(3,minmax(0,1fr));font-size:12px;color:color-mix(in srgb, var(--color-text) 55%, transparent)">
+      <div style="padding:var(--space-4) var(--space-8);border-right:1px solid var(--color-divider)">연성대학교 건축학과 · 건축설계기초 Ⅱ</div>
+      <div style="padding:var(--space-4) var(--space-8);border-right:1px solid var(--color-divider);font-feature-settings:'tnum'">{{ semester }} · SHEET A-00 ~ A-07</div>
+      <div style="padding:var(--space-4) var(--space-8);text-align:right">본 계획서는 학사 일정에 따라 조정될 수 있습니다.</div>
+    </footer>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;instructor&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;담당 교수&quot;,&quot;tsType&quot;:&quot;string&quot;},&quot;semester&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;2026학년도 2학기&quot;,&quot;tsType&quot;:&quot;string&quot;}}">
+class Component extends DCLogic {
+  renderVals() {
+    const P = this.props;
+    const instructor = P.instructor ?? "담당 교수";
+    const semester = P.semester ?? "2026학년도 2학기";
+    const weeksRaw = [
+      ["1", "오리엔테이션 · 기능이 없다는 것", "스튜디오 운영 방식 안내. ‘파빌리온에 기능이 없다’는 말의 뜻과 9m 큐브·3m 그리드 조건 제시. 몸의 치수표 배포.", "대지 조사 5항목 · 재료 실험체 5개"],
+      ["2", "대지 조사와 재료 실험", "문화관 앞마당의 다섯 항목 조사 합평 — 이미 사람이 머무는 자리를 찾는다. 폼보드·라이싱지 실험체 공유.", "대지 조사 A3 1장 · 실험체 5개"],
+      ["3", "매스 스터디 ①", "3m 그리드 27셀에서 빼기·쌓기·비우기. 형태 대안을 양으로 밀어붙인다.", "1:50 스터디 모형 3개"],
+      ["4", "매스 스터디 ②", "대안을 압축해 1안을 고른다. 왜 이것인지 말로 설명한다. 개별 데스크 크리틱.", "1:50 모형 3개 (누적 6개)"],
+      ["5", "앞마당 1:1 테이핑", "현장에서 9×9m를 마스킹테이프로 그리고 그 안에 서 본다. 몸으로 확인한 뒤 크기를 조정한다.", "수정된 1:50 모형"],
+      ["6", "재료 번역", "흙·나무·유리 중 선택. 재료 한 장의 크기를 알고 이음매의 위치를 결정한다.", "1:10 부분 모형 (접합부 1개)"],
+      ["7", "최종 모형 제작", "1:20 모형 제작과 마감. 사람 피규어를 반드시 세운다. 도면·모형 일치 점검.", "1:20 제작 중간 점검"],
+      ["8", "Project 1 최종 크리틱", "전체 합평. ‘이 재료라서 이 형태가 가능했다’를 자기 말로 설명한다.", "1:20 실물모형 · 설명 A3"],
+      ["9", "Project 2 시작 · 대지 답사", "안양동 934-11 조건표 배포와 현장 답사. 골목·이웃·해·걸어서 5분 거리를 기록한다.", "현장 기록 노트"],
+      ["10", "거주자 설정", "‘왜 하필 여기에 삽니까?’ 설정의 타당성을 대지와 동네에서 검증한다.", "거주자 설정 A3 · 대지 조사 A3"],
+      ["11", "영역과 동선 다이어그램", "공유·반공유·개인의 배열. 동선을 선이 아니라 시간과 순서로 그린다. 반드시 손으로.", "손 다이어그램 3안"],
+      ["12", "평면 1차", "다이어그램을 평면으로 번역한다. 디지털 도구는 여기서부터 — 결정된 설계를 옮기는 도구로만 쓴다.", "1:100 배치 · 평면 초안"],
+      ["13", "단면과 입면", "높이·빛·시선. 파빌리온의 세 키워드를 여기서 다시 적용한다.", "1:100 평면 · 단면 1세트"],
+      ["14", "도면 세트와 패널", "도면 규약 점검, 선의 위계와 치수 표기. 패널 레이아웃 편집.", "패널 초안 A1 흑백"],
+      ["15", "학기 최종 발표", "거주자 → 동선 → 공간의 인과를 끊김 없이 설명한다. 두 과제 통합 전시와 합평.", "A1 패널 · 도면세트"]
+    ];
+    return {
+      semester, instructor,
+      titleblock: [
+        { k: "Course", v: "건축설계기초 Ⅱ · Basic Architectural Design Ⅱ" },
+        { k: "Term", v: "15주 · P1 파빌리온 1–8주 / P2 쉐어하우스 9–15주" },
+        { k: "Studio", v: "설계실 3-2 · 24시간 개방" },
+        { k: "Instructor", v: instructor + " · 오피스아워 수 14:00–16:00" }
+      ],
+      info: [
+        { k: "교과목명", v: "건축설계기초 Ⅱ (Basic Architectural Design Ⅱ)" },
+        { k: "이수구분", v: "전공필수 · 1학년" },
+        { k: "학점/시간", v: "3학점 / 주 4시간 (스튜디오)" },
+        { k: "강의실", v: "설계실 3-2" },
+        { k: "수업 방식", v: "과제 기반 스튜디오 · 전체 크리틱과 데스크 크리틱 병행" },
+        { k: "대지", v: "P1 연성대 문화관 앞마당 · P2 안양시 만안구 안양동 934-11" },
+        { k: "매체", v: "1–11주 손과 모형 · 12–15주 디지털 병행" },
+        { k: "평가", v: "파빌리온 40 · 쉐어하우스 50 · 출석·참여 10" }
+      ],
+      goals: [
+        { n: "01", part: "Project 1", en: "form", title: "형태를 조작한다", body: "덩어리를 자르고 비우고 세우는 조작으로 형태를 설명할 수 있다. 형태를 그리는 것이 아니라 다루는 것으로 이해한다.", ask: "“하나를 빼면 무엇이 무너집니까?”" },
+        { n: "02", part: "Project 1", en: "material", title: "재료로 판단한다", body: "재료를 마감이 아니라 형태를 성립시키는 조건으로 다룬다. 모형 재료와 건축 재료를 구분할 수 있다.", ask: "“이 재료 한 장은 얼마나 큽니까?”" },
+        { n: "03", part: "Project 1", en: "human scale", title: "몸으로 크기를 잰다", body: "크기를 도면의 숫자가 아니라 몸을 기준으로 판단한다. 눈높이·앉는 높이·통과 폭을 근거로 치수를 정한다.", ask: "“여기 서면 무엇이 보이고 무엇이 가려집니까?”" },
+        { n: "04", part: "Project 2", en: "inhabitant", title: "거주자를 세운다", body: "프로그램을 받는 것이 아니라 스스로 만든다. 누가 어떻게 사는지를 정하면 필요한 공간의 목록과 크기가 따라 나온다.", ask: "“이 사람들은 왜 굳이 같이 삽니까?”" },
+        { n: "05", part: "Project 2", en: "circulation", title: "동선을 설계한다", body: "동선을 선이 아니라 시간과 순서로 다룬다. 평면 위의 화살표가 아니라 겪는 장면의 연속으로 이해한다.", ask: "“내 방까지 가는 동안 누구와 마주칩니까?”" },
+        { n: "06", part: "Project 2", en: "space", title: "공간을 배열한다", body: "설계를 방의 개수를 채우는 일이 아니라 성격이 다른 공간을 배열하는 일로 이해한다. 공유·반공유·개인의 위계를 만든다.", ask: "“이 공간은 누구의 것입니까?”" }
+      ],
+      bridges: [
+        { from: "form", to: "공간의 배열", body: "형태를 조작하던 손이, 이제 방과 방의 관계를 조작합니다. 빼고 비우던 판단이 그대로 평면의 판단이 됩니다." },
+        { from: "material", to: "경계의 성격", body: "덩어리를 세우던 재료가, 이제 빛과 시선과 소리를 조절합니다. 벽이 무엇으로 되어 있는지가 공간의 성격을 정합니다." },
+        { from: "human scale", to: "동선", body: "몸의 크기를 재던 감각이, 이제 몸의 움직임을 재는 감각이 됩니다. 통과 폭 900mm가 복도와 문의 근거가 됩니다." }
+      ],
+      projects: [
+        {
+          no: "01", tag: "Project 1 · Week 1–8", weight: "배점 40", slot: "v2p1",
+          slotLabel: "문화관 앞마당 대상지 사진",
+          title: "9m 큐브 · 문화관 앞마당의 파빌리온",
+          body: "파빌리온에는 방의 목록이 없습니다. 기능이 없는 것이 아니라 기능이 형태를 지시하지 않는 것이며, 그래서 형태·재료·몸이 설계의 근거가 되어야 합니다. 앞마당에서 이미 사람이 머무는 자리를 찾아내고 — 계단 끝, 화단 턱, 처마 밑 — 9m 큐브 안에서 그 자리를 형태로 만듭니다.",
+          specs: [
+            { k: "Site", v: "연성대학교 문화관 앞마당" },
+            { k: "Volume", v: "9 × 9 × 9 m 제약 상자 · 3 m 그리드 (채우지 않는다)" },
+            { k: "Material", v: "① 폼보드 · 라이싱지 → ② 흙 · 나무 · 유리" },
+            { k: "Study", v: "1:50 스터디 모형 누적 6개 이상" },
+            { k: "Output", v: "1:20 실물모형 · 1:10 부분모형 · 설명 A3" }
+          ]
+        },
+        {
+          no: "02", tag: "Project 2 · Week 9–15", weight: "배점 50", slot: "v2p2",
+          slotLabel: "안양동 934-11 대상지 사진",
+          title: "안양동 934-11의 쉐어하우스",
+          body: "‘같이 살지만 따로 사는’ 조건을 다룹니다. 거주자는 학생이 직접 설정하되 ‘왜 하필 안양동 934-11에 사는가’를 대지와 동네에서 찾아와야 합니다. 파빌리온에서 익힌 형태·재료·스케일이 여기서 배열·경계·동선으로 확장됩니다.",
+          specs: [
+            { k: "Site", v: "안양시 만안구 안양동 934-11" },
+            { k: "Program", v: "거주자 설정은 학생 자율 · 대지 조건표 별도 배포" },
+            { k: "Focus", v: "동선(시간과 순서) · 공간(공유 · 반공유 · 개인)" },
+            { k: "Study", v: "손 다이어그램 3안 · 1:100 스터디 모형(권장)" },
+            { k: "Output", v: "1:100 평면·단면 도면세트 · A1 패널" }
+          ]
+        }
+      ],
+      weeks: weeksRaw.map(([n, title, body, task]) => ({
+        n, title, body, task,
+        pad: n.length === 1 ? "0" + n : n,
+        phase: Number(n) <= 8 ? "Pavilion" : "Share House"
+      })),
+      rubric: [
+        { k: "Project 1 · 파빌리온", d: "form 12 · material 10 · human scale 10 · 대지 읽기 4 · 모형 완성도 4", v: "40" },
+        { k: "Project 2 · 쉐어하우스", d: "거주자 8 · 동선 12 · 공간 12 · Part 1 재적용 6 · 도면 8 · 패널과 발표 4", v: "50" },
+        { k: "출석 · 참여", d: "주간 크리틱 준비 상태 (지각 3회 = 결석 1회)", v: "10" }
+      ],
+      levels: [
+        { k: "form", a: "형태를 만든 조작을 말로 설명하고, 하나를 바꾸면 무엇이 무너지는지 안다", b: "형태를 설명하지만 근거가 취향에 머문다", c: "형태의 이유를 설명하지 못한다" },
+        { k: "material", a: "재료 한 장의 크기와 이음매 위치를 결정했고 그것이 형태에 나타난다", b: "재료를 정했으나 이음매·접합 고려가 없다", c: "재료를 색과 인상으로만 다룬다" },
+        { k: "human scale", a: "몸의 치수를 근거로 높이·폭을 정했고 모형에 사람이 있다", b: "사람을 세웠으나 치수의 근거가 없다", c: "실제 크기로 환산하면 사람이 쓸 수 없다" },
+        { k: "거주자", a: "대지와 동네에서 설정의 근거를 찾았다", b: "설정은 있으나 대지와 무관하다", c: "설정이 없거나 임의적이다" },
+        { k: "동선", a: "현관에서 개인실까지의 순서와 마주침을 설계로 조절했다", b: "동선을 그렸으나 선을 잇는 데 그친다", c: "방을 배치했을 뿐 동선이 없다" },
+        { k: "공간", a: "공유·반공유·개인의 성격 차이가 배열로 드러난다", b: "영역은 나눴으나 성격 차이가 공간에 없다", c: "방의 목록만 있다" }
+      ],
+      supplies: [
+        { k: "제도 도구", v: "삼각축척자, 30cm 삼각자, 샤프(0.3·0.5), 트레이싱지, 제도용 테이프" },
+        { k: "모형 재료 ①", v: "폼보드 3mm, 라이싱지, 커터, 목공용 풀, 컷팅 매트 — 1~5주 재료 실험과 1:50 스터디" },
+        { k: "모형 재료 ②", v: "바스우드 각재, 투명 시트, 석고 또는 점토 — 6주 이후 재료 번역용" },
+        { k: "현장 · 기록", v: "줄자 5m, 마스킹테이프 1롤(5주 1:1 테이핑), A5 스케치북 1권" },
+        { k: "디지털", v: "AutoCAD 또는 Vectorworks(학생용 무료), SketchUp, Adobe InDesign" },
+        { k: "안전", v: "커터 매트와 장갑 — 야간 작업은 2인 이상일 때만" }
+      ],
+      books: [
+        { n: "01", t: "프란시스 D. K. 칭, 『건축의 형태·공간·질서』" },
+        { n: "02", t: "김광현, 『건축이라는 가능성』" },
+        { n: "03", t: "야마모토 리켄 외, 『마을을 만드는 집』 — 공동주거 사례" },
+        { n: "04", t: "토지이음(eum.go.kr) · 국가법령정보센터 — 대지 조건과 안양시 조례" }
+      ],
+      refs: [
+        {
+          group: "Project 1 · 파빌리온",
+          items: [
+            { t: "한국의 정자(亭子)", w: "기능이 없는데 사람이 모이는 구조. 기둥·지붕·마루뿐이다. 첫 시간에 가장 먼저 볼 사례." },
+            { t: "미스 반 데어 로에, 바르셀로나 파빌리온 (1929)", w: "벽의 ‘배치’만으로 만들어지는 공간. 대리석·유리·물의 재료 대비." },
+            { t: "소우 후지모토, 서펜타인 파빌리온 (2013)", w: "격자의 조작. 같은 단위를 쌓아 만든 덩어리 — 3m 그리드 과제와 직결된다." },
+            { t: "페터 춤토르, 서펜타인 파빌리온 (2011)", w: "둘러싸서 안을 만드는 방식. 재료의 어둠과 정원의 빛." },
+            { t: "SANAA, 서펜타인 파빌리온 (2009)", w: "얇은 지붕과 가는 기둥. 재료가 형태를 어디까지 밀 수 있는가." },
+            { t: "서펜타인 파빌리온 시리즈 전체", w: "같은 자리 · 기능 없음 · 다른 형태. 나란히 놓고 비교한다." }
+          ]
+        },
+        {
+          group: "Project 2 · 쉐어하우스",
+          items: [
+            { t: "나루세 · 이노쿠마, LT조시가야 (2013)", w: "개인실이 공유공간을 3차원으로 감싸는 구성. 쉐어하우스 다이어그램의 교과서." },
+            { t: "SANAA(니시자와 류에), 모리야마 주택 (2005)", w: "하나의 집을 여러 동으로 쪼개 그 사이를 공유공간으로 쓰는 방식." },
+            { t: "소우 후지모토, House NA (2011)", w: "높이 차이만으로 영역을 나누기. 벽 없이 공간을 구분하는 훈련." },
+            { t: "국내 리모델링형 쉐어하우스", w: "현실의 면적과 예산 감각. 이상적 사례만 보면 안이 비현실적으로 커진다." },
+            { t: "안양예술공원 답사 (검토 중)", w: "학교에서 가까운 실제 파빌리온·공공예술 구조물. 개방 여부 확인 후 현장 수업으로 진행." }
+          ]
+        }
+      ],
+      rules: [
+        { n: "01", title: "출결", body: "스튜디오는 함께 작업하는 시간입니다. 총 시간의 1/4을 초과해 결석하면 F 처리되며, 지각 3회는 결석 1회로 봅니다." },
+        { n: "02", title: "매주 만들어 온다", body: "만들어 온 것이 있어야 크리틱이 성립합니다. 특히 3–4주에는 1:50 모형을 매주 3개씩 만들어 옵니다. 미완성이라도 반드시 가지고 오십시오." },
+        { n: "03", title: "전체 크리틱", body: "남의 안을 보는 것이 자기 안을 고치는 것보다 빨리 배웁니다. 자기 차례가 아니어도 자리를 지키고, 질문을 하나씩 준비해 오십시오." },
+        { n: "04", title: "손이 먼저", body: "1–11주는 손과 모형으로만 진행합니다. 디지털 도구는 12주부터, 결정된 설계를 정확히 옮기는 도구로만 씁니다." },
+        { n: "05", title: "제출 지연", body: "제출 기한 이후 24시간마다 해당 과제 점수의 10%를 감점합니다. 3일 이후 제출은 받지 않습니다." },
+        { n: "06", title: "표절과 AI", body: "사례 참조는 출처를 밝히면 권장합니다. 생성 이미지·도면을 자기 작업으로 제출하는 것은 표절로 처리합니다." }
+      ],
+      contact: [
+        { k: "연구실", v: "산업디자인관 4층 407호" },
+        { k: "오피스아워", v: "수 14:00–16:00" },
+        { k: "메일", v: "studio@yeonsung.ac.kr" },
+        { k: "스튜디오", v: "설계실 3-2 (24시간 개방)" }
+      ],
+      faq: [
+        { q: "설계를 처음 하는데 따라갈 수 있을까요?", a: "이 수업은 설계를 처음 배우는 학생을 전제로 만들어졌습니다. 앞의 8주는 방의 개수도, 법규도, 설비도 없이 덩어리만 다룹니다. 필요한 것은 경험이 아니라 매주 만들어 오는 성실함입니다." },
+        { q: "파빌리온에 기능이 없다는 게 무슨 뜻인가요?", a: "기능이 없는 것이 아니라, 기능이 형태를 지시하지 않는다는 뜻입니다. 방의 목록이 주어지지 않을 뿐이고 대신 대지·재료·몸이 근거가 됩니다. 나무 그늘에는 ‘쉼터’라는 이름표가 없지만 사람이 앉습니다. 그 그늘을 손으로 만드는 일이라고 생각하면 됩니다." },
+        { q: "9m 큐브를 꽉 채워야 하나요?", a: "아닙니다. 9m 큐브는 채워야 할 부피가 아니라 넘지 말아야 할 한계입니다. 3m 그리드 27칸 중 몇 칸을 쓸지는 각자의 판단이고, 그 판단의 이유가 곧 평가 대상입니다." },
+        { q: "캐드를 못 하면 불리한가요?", a: "1–11주는 손과 모형으로만 진행하므로 전혀 불리하지 않습니다. 디지털 도구는 12주부터 쓰며 별도 튜토리얼을 제공합니다. 도구가 아니라 판단을 먼저 배웁니다." },
+        { q: "모형 재료비는 얼마나 드나요?", a: "학기 전체 5~8만 원 수준입니다. 1:50 스터디를 여러 개 만들지만 폼보드와 라이싱지는 저렴하고, 학과 공동 구매로 단가를 낮춥니다. 남은 재료는 스튜디오 공용함에 모아 함께 씁니다." },
+        { q: "쉐어하우스 거주자는 마음대로 정해도 되나요?", a: "자유롭게 정하되 근거가 필요합니다. ‘왜 하필 안양동 934-11에 사는가’에 답할 수 있어야 하고, 9주 답사에서 찾은 것이 그 근거가 됩니다. 10주에 설정의 타당성을 함께 검증합니다." }
+      ]
+    };
+  }
+}
+</script>
+</body>
+</html>
