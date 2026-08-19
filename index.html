@@ -3,649 +3,800 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>매스와 공간 — 설계입문 스튜디오</title>
-<meta name="description" content="설계 입문 1학년을 위한 15주 커리큘럼 소개 — 파빌리온(매스)에서 쉐어하우스(공간·동선)로 이어지는 강의 구조">
+<title>건축설계기초 Ⅱ</title>
+<meta name="description" content="연성대학교 건축학과 · 건축설계기초 Ⅱ 강의계획서 — 파빌리온(1~8주)과 쉐어하우스(9~15주)로 이어지는 15주 스튜디오">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%93%90%3C/text%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&family=Noto+Sans+KR:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Lora:wght@400;500;600&family=Gowun+Batang:wght@400;700&family=Noto+Serif+KR:wght@200;300;400;600&display=swap" rel="stylesheet">
 
 <style>
   :root{
-    --bg:#eae7e0;
-    --bg-elevated:#f5f3ee;
-    --bg-sunken:#dfdbd2;
-    --ink:#201e1b;
-    --ink-soft:#5b564e;
-    --ink-faint:#8a8478;
-    --line:rgba(32,30,27,0.14);
-    --line-strong:rgba(32,30,27,0.28);
-    --mass:#2f5e75;
-    --mass-strong:#1f4a5f;
-    --mass-soft:rgba(47,94,117,0.12);
-    --mass-ink:#eaf3f7;
-    --space-c:#9c5f28;
-    --space-strong:#7c4a1d;
-    --space-soft:rgba(156,95,40,0.13);
-    --space-ink:#fbf1e6;
-    --shadow: 0 1px 2px rgba(32,30,27,0.06), 0 8px 24px rgba(32,30,27,0.08);
+    --color-bg:#f5f1e7;
+    --color-text:#211d19;
+    --color-divider:rgba(33,29,25,0.16);
+    --color-accent:#8a2d24;
+    --color-accent-100:rgba(138,45,36,0.08);
+    --color-accent-300:rgba(138,45,36,0.35);
+    --color-accent-700:#6b211a;
+    --space-2:8px; --space-3:12px; --space-4:16px; --space-6:24px; --space-8:32px;
+    --font-heading:"Cormorant Garamond","Gowun Batang",serif;
+    --font-body:"Lora","Noto Serif KR",serif;
+    --sheet-line: color-mix(in srgb, var(--color-text) 22%, transparent);
   }
   @media (prefers-color-scheme: dark){
     :root:not([data-theme="light"]){
-      --bg:#17181a;
-      --bg-elevated:#1f2123;
-      --bg-sunken:#111213;
-      --ink:#ece8e1;
-      --ink-soft:#aca69c;
-      --ink-faint:#726d64;
-      --line:rgba(236,232,225,0.14);
-      --line-strong:rgba(236,232,225,0.26);
-      --mass:#7fbcda;
-      --mass-strong:#a6d3e8;
-      --mass-soft:rgba(127,188,218,0.14);
-      --mass-ink:#0d2530;
-      --space-c:#e2985a;
-      --space-strong:#f0b57e;
-      --space-soft:rgba(226,152,90,0.15);
-      --space-ink:#301c0c;
-      --shadow: 0 1px 2px rgba(0,0,0,0.3), 0 8px 30px rgba(0,0,0,0.35);
+      --color-bg:#1b1815;
+      --color-text:#ece5da;
+      --color-divider:rgba(236,229,218,0.16);
+      --color-accent:#df8271;
+      --color-accent-100:rgba(223,130,113,0.1);
+      --color-accent-300:rgba(223,130,113,0.4);
+      --color-accent-700:#f0a698;
     }
   }
   :root[data-theme="dark"]{
-    --bg:#17181a;
-    --bg-elevated:#1f2123;
-    --bg-sunken:#111213;
-    --ink:#ece8e1;
-    --ink-soft:#aca69c;
-    --ink-faint:#726d64;
-    --line:rgba(236,232,225,0.14);
-    --line-strong:rgba(236,232,225,0.26);
-    --mass:#7fbcda;
-    --mass-strong:#a6d3e8;
-    --mass-soft:rgba(127,188,218,0.14);
-    --mass-ink:#0d2530;
-    --space-c:#e2985a;
-    --space-strong:#f0b57e;
-    --space-soft:rgba(226,152,90,0.15);
-    --space-ink:#301c0c;
-    --shadow: 0 1px 2px rgba(0,0,0,0.3), 0 8px 30px rgba(0,0,0,0.35);
+    --color-bg:#1b1815;
+    --color-text:#ece5da;
+    --color-divider:rgba(236,229,218,0.16);
+    --color-accent:#df8271;
+    --color-accent-100:rgba(223,130,113,0.1);
+    --color-accent-300:rgba(223,130,113,0.4);
+    --color-accent-700:#f0a698;
   }
 
   *{box-sizing:border-box;}
-  html{scroll-behavior:smooth;}
-  @media (prefers-reduced-motion: reduce){ html{scroll-behavior:auto;} }
+  body{margin:0;-webkit-font-smoothing:antialiased;background:var(--color-bg);color:var(--color-text);}
+  a{color:inherit;text-decoration:none;}
+  a.inline-link{color:var(--color-accent-700);text-decoration:none;}
+  a.inline-link:hover{color:var(--color-accent);text-decoration:underline;}
+  summary::-webkit-details-marker{display:none;}
+  summary{list-style:none;}
+  h1,h2,h3{font-family:var(--font-heading);}
 
-  body{
-    margin:0;
-    background:var(--bg);
-    color:var(--ink);
-    font-family:"Noto Sans KR","Malgun Gothic",sans-serif;
-    line-height:1.7;
-    font-size:16px;
-    -webkit-font-smoothing:antialiased;
-  }
+  .hr{border:none;border-top:1px solid var(--color-divider);margin:var(--space-4) 0;}
+  .text-muted{color:color-mix(in srgb, var(--color-text) 55%, transparent);}
 
-  .wrap{max-width:1080px;margin:0 auto;padding:0 28px;}
-  .prose{max-width:640px;}
-
-  h1,h2,h3{
-    font-family:"Gowun Batang","Noto Serif KR",serif;
-    font-weight:700;
-    text-wrap:balance;
-    margin:0;
-    color:var(--ink);
+  .plate{
+    display:flex;align-items:center;justify-content:center;text-align:center;
+    border:1px solid var(--color-divider);
+    background:repeating-linear-gradient(45deg, color-mix(in srgb, var(--color-text) 5%, transparent) 0 10px, transparent 10px 20px);
+    color:color-mix(in srgb, var(--color-text) 45%, transparent);
+    font-family:var(--font-heading);
+    font-size:12px;letter-spacing:0.08em;text-transform:uppercase;
+    padding:var(--space-4);
   }
 
-  .mono{
-    font-family:"JetBrains Mono",ui-monospace,monospace;
-    font-variant-numeric:tabular-nums;
-  }
+  .week-tab{transition:background 0.15s ease, color 0.15s ease;}
+  .week-tab:hover{color:var(--color-accent-700);background:var(--color-accent-100);}
+  .week-row{transition:background 0.15s ease;}
+  .week-row:hover{background:color-mix(in srgb, var(--color-accent) 5%, transparent);}
 
-  .eyebrow{
-    font-family:"JetBrains Mono",ui-monospace,monospace;
-    font-size:0.78rem;
-    letter-spacing:0.14em;
-    text-transform:uppercase;
-    color:var(--ink-faint);
+  /* ---- responsive collapse for small screens ---- */
+  @media (max-width:900px){
+    .g-hero{grid-template-columns:1fr !important;}
+    .g-2col{grid-template-columns:1fr !important;}
+    .g-3col{grid-template-columns:1fr !important;}
+    .g-goals{grid-template-columns:repeat(2,minmax(0,1fr)) !important;}
+    .g-rules{grid-template-columns:repeat(2,minmax(0,1fr)) !important;}
+    .week-row-grid{grid-template-columns:minmax(0,90px) 1fr !important;}
+    .week-row-grid .wk-body,.week-row-grid .wk-task{grid-column:1/-1 !important;}
+    .titleblock-panel{border-right:none !important;border-top:1px solid var(--color-divider);}
   }
-
-  a{color:inherit;}
-
-  section{padding:96px 0;}
-  section + section{border-top:1px solid var(--line);}
-  @media (max-width:720px){ section{padding:64px 0;} }
-
-  /* ---------- HERO ---------- */
-  .hero{
-    position:relative;
-    padding:120px 0 100px;
-    overflow:hidden;
-    background:
-      linear-gradient(var(--bg),var(--bg)) padding-box,
-      var(--bg);
+  @media (max-width:560px){
+    .g-goals{grid-template-columns:1fr !important;}
+    .g-rules{grid-template-columns:1fr !important;}
+    .nav-links{display:none !important;}
   }
-  .hero::before{
-    content:"";
-    position:absolute; inset:0;
-    background-image:
-      linear-gradient(to right, var(--line) 1px, transparent 1px),
-      linear-gradient(to bottom, var(--line) 1px, transparent 1px);
-    background-size: 64px 64px;
-    mask-image: radial-gradient(ellipse 90% 70% at 50% 20%, black 40%, transparent 85%);
-    opacity:0.7;
-    pointer-events:none;
-  }
-  .hero-inner{position:relative; display:grid; gap:56px;}
-  .hero-eyebrow{display:flex; align-items:center; gap:10px; margin-bottom:22px;}
-  .hero-eyebrow .dot{width:6px;height:6px;border-radius:50%;background:var(--mass);}
-  .hero h1{
-    font-size:clamp(2.1rem, 4.6vw, 3.6rem);
-    line-height:1.32;
-  }
-  .hero h1 em{
-    font-style:normal;
-    background:linear-gradient(to top, var(--mass-soft) 38%, transparent 38%);
-  }
-  .hero-lede{
-    margin-top:26px;
-    max-width:560px;
-    color:var(--ink-soft);
-    font-size:1.05rem;
-  }
-  .hero-meta{
-    display:flex; flex-wrap:wrap; gap:10px 28px;
-    margin-top:34px;
-    font-size:0.86rem;
-    color:var(--ink-faint);
-  }
-  .hero-meta span b{
-    font-family:"JetBrains Mono",monospace;
-    color:var(--ink-soft);
-    font-weight:500;
-  }
-
-  /* cube diagram */
-  .cube-diagram{
-    display:grid;
-    grid-template-columns: 1fr auto 1fr;
-    align-items:center;
-    gap:20px;
-    max-width:620px;
-  }
-  @media (max-width:640px){
-    .cube-diagram{grid-template-columns:1fr; justify-items:center;}
-    .cube-diagram .arrow{transform:rotate(90deg);}
-  }
-  .cube-panel{display:flex; flex-direction:column; align-items:center; gap:12px;}
-  .cube-panel .cap{font-size:0.78rem; color:var(--ink-faint); font-family:"JetBrains Mono",monospace;}
-  .cube-diagram .arrow{color:var(--ink-faint); flex-shrink:0;}
-  .grid9 rect.cell{stroke:var(--line-strong); stroke-width:1;}
-  .grid9.mass rect.cell{fill:var(--mass); opacity:0.86;}
-  .grid9.mass rect.cell:nth-child(5){opacity:1;}
-  .grid9.hollow rect.cell{fill:var(--bg-elevated);}
-  .grid9.hollow rect.wall{fill:var(--space-c); opacity:0.9;}
-  .grid9.hollow circle{fill:var(--space-strong);}
-
-  /* ---------- SECTION HEADS ---------- */
-  .sec-head{max-width:640px; margin-bottom:52px;}
-  .sec-head h2{font-size:clamp(1.5rem, 2.6vw, 2.05rem); margin-top:14px; line-height:1.4;}
-  .sec-head p{color:var(--ink-soft); margin-top:16px;}
-
-  /* ---------- THESIS QUOTE ---------- */
-  .thesis{
-    text-align:center;
-    padding:64px 0;
-  }
-  .thesis blockquote{
-    margin:0 auto;
-    max-width:720px;
-    font-family:"Gowun Batang",serif;
-    font-size:clamp(1.5rem,3.4vw,2.3rem);
-    line-height:1.55;
-    font-weight:700;
-  }
-  .thesis cite{
-    display:block;
-    margin-top:20px;
-    font-style:normal;
-    font-family:"JetBrains Mono",monospace;
-    font-size:0.8rem;
-    letter-spacing:0.08em;
-    color:var(--ink-faint);
-  }
-
-  /* ---------- TWO PARTS TABLE ---------- */
-  .parts-grid{
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:1px;
-    background:var(--line);
-    border:1px solid var(--line);
-    border-radius:14px;
-    overflow:hidden;
-  }
-  @media (max-width:760px){ .parts-grid{grid-template-columns:1fr;} }
-  .part-col{background:var(--bg-elevated); padding:32px 28px;}
-  .part-col.mass{border-top:3px solid var(--mass);}
-  .part-col.space{border-top:3px solid var(--space-c);}
-  .part-col .part-num{font-family:"JetBrains Mono",monospace; font-size:0.78rem; color:var(--ink-faint); letter-spacing:0.1em;}
-  .part-col h3{font-size:1.4rem; margin-top:8px;}
-  .part-col .part-weeks{font-size:0.86rem; color:var(--ink-faint); margin-top:4px; font-family:"JetBrains Mono",monospace;}
-  .part-facts{list-style:none; margin:22px 0 0; padding:0; display:grid; gap:12px;}
-  .part-facts li{display:grid; grid-template-columns:84px 1fr; gap:12px; font-size:0.92rem; padding-top:12px; border-top:1px solid var(--line);}
-  .part-facts li:first-child{border-top:none; padding-top:0;}
-  .part-facts .k{color:var(--ink-faint); font-size:0.78rem; letter-spacing:0.04em; padding-top:2px;}
-  .part-facts .v{color:var(--ink);}
-  .part-col.mass .v b, .part-col.mass .k{color:var(--mass-strong);}
-  .part-col.space .v b, .part-col.space .k{color:var(--space-strong);}
-
-  /* ---------- BRIDGES ---------- */
-  .bridges{margin-top:64px; display:grid; gap:18px;}
-  .bridge{
-    display:grid;
-    grid-template-columns: 1fr auto 1fr;
-    align-items:center;
-    gap:18px;
-    background:var(--bg-elevated);
-    border:1px solid var(--line);
-    border-radius:12px;
-    padding:20px 22px;
-  }
-  @media (max-width:640px){
-    .bridge{grid-template-columns:1fr; text-align:center; gap:10px;}
-    .bridge .bmid{transform:rotate(90deg); margin:2px auto;}
-  }
-  .bridge .bside{font-family:"JetBrains Mono",monospace; font-weight:600; font-size:1rem;}
-  .bridge .bside.from{color:var(--mass-strong); text-align:right;}
-  .bridge .bside.to{color:var(--space-strong); text-align:left;}
-  @media (max-width:640px){ .bridge .bside.from, .bridge .bside.to{text-align:center;} }
-  .bridge .bnote{grid-column:1/-1; font-size:0.86rem; color:var(--ink-soft); margin-top:6px; text-align:center;}
-  .bridge .bmid{color:var(--ink-faint);}
-
-  /* ---------- KEYWORD CARDS ---------- */
-  .kw-group-label{
-    display:flex; align-items:center; gap:12px;
-    margin:0 0 24px;
-    font-family:"JetBrains Mono",monospace; font-size:0.8rem; letter-spacing:0.1em;
-    color:var(--ink-faint);
-  }
-  .kw-group-label .bar{width:22px; height:2px;}
-  .kw-group-label.mass .bar{background:var(--mass);}
-  .kw-group-label.space .bar{background:var(--space-c);}
-  .kw-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:16px;}
-  @media (max-width:820px){ .kw-grid{grid-template-columns:1fr 1fr;} }
-  @media (max-width:560px){ .kw-grid{grid-template-columns:1fr;} }
-  .kw-grid + .kw-group-label{margin-top:48px;}
-  .kw-card{
-    background:var(--bg-elevated);
-    border:1px solid var(--line);
-    border-radius:14px;
-    padding:26px 22px;
-    display:flex; flex-direction:column; gap:14px;
-    transition:transform 0.25s ease, box-shadow 0.25s ease;
-  }
-  .kw-card:hover{transform:translateY(-3px); box-shadow:var(--shadow);}
-  @media (prefers-reduced-motion:reduce){ .kw-card{transition:none;} .kw-card:hover{transform:none;} }
-  .kw-card .kw-name{font-family:"Gowun Batang",serif; font-size:1.3rem; font-weight:700;}
-  .kw-card.mass .kw-name{color:var(--mass-strong);}
-  .kw-card.space .kw-name{color:var(--space-strong);}
-  .kw-card .kw-def{font-size:0.92rem; color:var(--ink-soft); flex-grow:1;}
-  .kw-card .kw-q{
-    font-size:0.86rem;
-    font-style:italic;
-    padding-top:12px;
-    border-top:1px dashed var(--line-strong);
-    color:var(--ink);
-  }
-  .kw-card .kw-q::before{content:"Q · "; font-style:normal; font-family:"JetBrains Mono",monospace; color:var(--ink-faint);}
-
-  /* ---------- SITES ---------- */
-  .site-grid{display:grid; grid-template-columns:1fr 1fr; gap:24px;}
-  @media (max-width:720px){ .site-grid{grid-template-columns:1fr;} }
-  .site-card{padding:28px 26px; border-radius:14px; border:1px solid var(--line);}
-  .site-card.mass{background:var(--mass-soft);}
-  .site-card.space{background:var(--space-soft);}
-  .site-card .site-tag{font-family:"JetBrains Mono",monospace; font-size:0.76rem; letter-spacing:0.08em; text-transform:uppercase;}
-  .site-card.mass .site-tag{color:var(--mass-strong);}
-  .site-card.space .site-tag{color:var(--space-strong);}
-  .site-card h3{font-size:1.15rem; margin-top:10px;}
-  .site-card p{font-size:0.9rem; color:var(--ink-soft); margin:10px 0 0;}
-  .site-card .site-how{margin-top:16px; font-size:0.82rem; color:var(--ink-faint); font-family:"JetBrains Mono",monospace;}
-
-  /* ---------- MILESTONES ---------- */
-  .milestones{display:grid; grid-template-columns:1fr 1fr; gap:1px; background:var(--line); border:1px solid var(--line); border-radius:14px; overflow:hidden;}
-  @media (max-width:720px){ .milestones{grid-template-columns:1fr;} }
-  .milestone{background:var(--bg-elevated); padding:34px 28px; display:flex; flex-direction:column; gap:16px;}
-  .milestone .m-week{font-family:"JetBrains Mono",monospace; font-size:0.78rem; color:var(--ink-faint);}
-  .milestone .m-icon{width:56px; height:56px;}
-  .milestone h3{font-size:1.2rem;}
-  .milestone p{font-size:0.9rem; color:var(--ink-soft); margin:0;}
-
-  /* ---------- TIMELINE ---------- */
-  .timeline{margin-top:16px;}
-  .tl-track{
-    position:relative;
-    display:grid;
-    grid-template-columns:repeat(15,1fr);
-    gap:4px;
-    padding-top:36px;
-  }
-  .tl-cell{
-    position:relative;
-    height:52px;
-    border-radius:6px;
-    background:var(--bg-sunken);
-    border:1px solid var(--line);
-  }
-  .tl-cell.mass{background:var(--mass-soft); border-color:var(--mass);}
-  .tl-cell.space{background:var(--space-soft); border-color:var(--space-c);}
-  .tl-cell .wk{position:absolute; top:4px; left:6px; font-family:"JetBrains Mono",monospace; font-size:0.68rem; color:var(--ink-faint);}
-  .tl-cell.mass .wk{color:var(--mass-strong);}
-  .tl-cell.space .wk{color:var(--space-strong);}
-  .tl-marker{
-    position:absolute; top:0; transform:translateX(-50%);
-    display:flex; flex-direction:column; align-items:center; gap:4px;
-    font-size:0.68rem; white-space:nowrap;
-    color:var(--ink-faint);
-  }
-  .tl-marker .flag{width:6px;height:6px;border-radius:50%; background:var(--ink-faint);}
-  .tl-marker.strong{color:var(--ink); font-weight:600;}
-  .tl-marker.strong .flag{background:var(--ink);}
-  .tl-legend{display:flex; gap:24px; margin-top:44px; flex-wrap:wrap; font-size:0.84rem; color:var(--ink-soft);}
-  .tl-legend .lg{display:flex; align-items:center; gap:8px;}
-  .tl-legend .sw{width:14px;height:14px;border-radius:4px;}
-  .tl-legend .sw.mass{background:var(--mass);}
-  .tl-legend .sw.space{background:var(--space-c);}
-  @media (max-width:720px){
-    .tl-track{grid-template-columns:repeat(8,1fr); grid-auto-rows:52px;}
-  }
-
-  /* ---------- FOOTER ---------- */
-  footer{padding:72px 0 96px;}
-  footer .foot-thesis{
-    font-family:"Gowun Batang",serif;
-    font-size:clamp(1.3rem,2.6vw,1.7rem);
-    max-width:520px;
-    line-height:1.6;
-  }
-  footer .foot-meta{margin-top:40px; display:flex; justify-content:space-between; flex-wrap:wrap; gap:12px; font-size:0.8rem; color:var(--ink-faint); font-family:"JetBrains Mono",monospace;}
-
-  /* reveal animation */
-  .reveal{opacity:0; transform:translateY(14px); transition:opacity 0.6s ease, transform 0.6s ease;}
-  .reveal.in{opacity:1; transform:none;}
-  @media (prefers-reduced-motion:reduce){ .reveal{opacity:1; transform:none; transition:none;} }
 </style>
 </head>
 <body>
 
-<!-- ============ HERO ============ -->
-<div class="hero">
-  <div class="wrap hero-inner">
-    <div>
-      <div class="hero-eyebrow"><span class="dot"></span><span class="eyebrow">설계입문 스튜디오 · 15주 커리큘럼</span></div>
-      <h1>덩어리를 다루는 법을 익히고,<br><em>그 안으로</em> 들어간다.</h1>
-      <p class="hero-lede">설계를 처음 만나는 학생을 위한 강의입니다. 앞의 8주는 손으로 매스를 세우고, 뒤의 7주는 그 매스 안에서 사람이 움직이는 법을 설계합니다. 매체는 아날로그에서 시작해 후반부에 디지털로 넘어갑니다.</p>
-      <div class="hero-meta">
-        <span>대상 <b>설계 입문 1학년</b></span>
-        <span>구성 <b>Part 1 · 1–8주</b> → <b>Part 2 · 9–15주</b></span>
-        <span>매체 <b>손스케치 · 모형 → 다이어그램 · 도면</b></span>
+<div style="background:var(--color-bg);color:var(--color-text);font-family:var(--font-body);min-height:100vh;background-image:linear-gradient(var(--color-divider) 1px,transparent 1px),linear-gradient(90deg,var(--color-divider) 1px,transparent 1px);background-size:calc(var(--space-8)*2) calc(var(--space-8)*2);background-position:-1px -1px">
+
+  <div style="max-width:1280px;margin:0 auto;background:var(--color-bg);border-left:1px solid var(--sheet-line);border-right:1px solid var(--sheet-line)">
+
+    <div style="display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:stretch;border-bottom:1px solid var(--sheet-line);position:sticky;top:0;background:var(--color-bg);z-index:20">
+      <div style="display:flex;align-items:center;gap:var(--space-6);padding:var(--space-3) var(--space-6)">
+        <div style="font-family:var(--font-heading);font-size:17px;letter-spacing:0.02em">연성대학교 건축학과</div>
+        <div class="nav-links" style="display:flex;gap:var(--space-4);font-size:12.5px">
+          <a href="#a01" class="inline-link">개요</a>
+          <a href="#a02" class="inline-link">과제</a>
+          <a href="#a03" class="inline-link">주차별</a>
+          <a href="#a04" class="inline-link">평가</a>
+          <a href="#a05" class="inline-link">사례</a>
+          <a href="#a06" class="inline-link">운영</a>
+          <a href="#a07" class="inline-link">문의</a>
+        </div>
       </div>
+      <div style="display:flex;align-items:center;padding:0 var(--space-6);border-left:1px solid var(--sheet-line);font-family:var(--font-heading);font-size:12px;letter-spacing:0.16em;text-transform:uppercase;color:var(--color-accent-700);font-feature-settings:'tnum'">SYLLABUS · SHEET A-00</div>
     </div>
 
-    <div class="cube-diagram">
-      <div class="cube-panel">
-        <svg class="grid9 mass" width="132" height="132" viewBox="0 0 132 132">
-          <g>
-            <rect class="cell" x="1" y="1" width="42" height="42"/><rect class="cell" x="45" y="1" width="42" height="42"/><rect class="cell" x="89" y="1" width="42" height="42"/>
-            <rect class="cell" x="1" y="45" width="42" height="42"/><rect class="cell" x="45" y="45" width="42" height="42"/><rect class="cell" x="89" y="45" width="42" height="42"/>
-            <rect class="cell" x="1" y="89" width="42" height="42"/><rect class="cell" x="45" y="89" width="42" height="42"/><rect class="cell" x="89" y="89" width="42" height="42"/>
-          </g>
-        </svg>
-        <span class="cap">밖에서 본다 — 매스</span>
+    <section style="border-bottom:1px solid var(--sheet-line)">
+      <div style="padding:calc(var(--space-8)*1.6) var(--space-8) var(--space-8)">
+        <div style="display:flex;align-items:center;gap:var(--space-3);font-family:var(--font-heading);font-size:12px;letter-spacing:0.18em;text-transform:uppercase;color:var(--color-accent-700);font-feature-settings:'tnum';margin-bottom:var(--space-6)">
+          <span style="width:calc(var(--space-8)*1.2);height:1px;background:var(--color-accent)"></span>
+          <span>2026학년도 2학기 · 1학년 설계 스튜디오 · 15주</span>
+        </div>
+        <h1 style="font-size:clamp(48px,6vw,84px);font-weight:400;line-height:1.04;letter-spacing:-0.03em;margin:0 0 var(--space-6);max-width:22em">건축설계기초 Ⅱ<br><span style="color:color-mix(in srgb, var(--color-text) 45%, transparent)">덩어리를 다루고, 그 안으로 들어간다</span></h1>
+        <div class="g-hero" style="display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,0.85fr);gap:calc(var(--space-8)*1.4);align-items:start">
+          <p style="text-align:justify;text-wrap:pretty;font-size:17px;line-height:1.95;margin:0;color:color-mix(in srgb, var(--color-text) 84%, transparent)">설계를 처음 접하는 학생을 위한 두 개의 과제로 이루어진 스튜디오입니다. 앞의 8주는 연성대학교 문화관 앞마당에서 9m 큐브를 조건으로 파빌리온을 만들며 <strong style="font-weight:400;color:var(--color-text)">형태 · 재료 · 휴먼스케일</strong>로 매스를 다룹니다. 뒤의 7주는 안양시 만안구 안양동 934-11의 실제 대지에 쉐어하우스를 계획하며 <strong style="font-weight:400;color:var(--color-text)">동선과 공간</strong>을 다룹니다. 덩어리를 다루는 법을 먼저 익히고, 그 다음에 그 안으로 들어갑니다.</p>
+          <div class="titleblock-panel" style="border-top:1px solid var(--color-text);padding-top:var(--space-3)">
+            <div style="display:grid;grid-template-columns:minmax(0,86px) minmax(0,1fr);gap:var(--space-3);padding:var(--space-2) 0;border-bottom:1px solid var(--color-divider)">
+              <div style="font-family:var(--font-heading);font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:color-mix(in srgb, var(--color-text) 55%, transparent);padding-top:3px">Course</div>
+              <div style="font-size:14px;line-height:1.6;font-feature-settings:'tnum'">건축설계기초 Ⅱ · Basic Architectural Design Ⅱ</div>
+            </div>
+            <div style="display:grid;grid-template-columns:minmax(0,86px) minmax(0,1fr);gap:var(--space-3);padding:var(--space-2) 0;border-bottom:1px solid var(--color-divider)">
+              <div style="font-family:var(--font-heading);font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:color-mix(in srgb, var(--color-text) 55%, transparent);padding-top:3px">Term</div>
+              <div style="font-size:14px;line-height:1.6;font-feature-settings:'tnum'">15주 · P1 파빌리온 1–8주 / P2 쉐어하우스 9–15주</div>
+            </div>
+            <div style="display:grid;grid-template-columns:minmax(0,86px) minmax(0,1fr);gap:var(--space-3);padding:var(--space-2) 0;border-bottom:1px solid var(--color-divider)">
+              <div style="font-family:var(--font-heading);font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:color-mix(in srgb, var(--color-text) 55%, transparent);padding-top:3px">Studio</div>
+              <div style="font-size:14px;line-height:1.6;font-feature-settings:'tnum'">설계실 3-2 · 24시간 개방</div>
+            </div>
+            <div style="display:grid;grid-template-columns:minmax(0,86px) minmax(0,1fr);gap:var(--space-3);padding:var(--space-2) 0;border-bottom:1px solid var(--color-divider)">
+              <div style="font-family:var(--font-heading);font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:color-mix(in srgb, var(--color-text) 55%, transparent);padding-top:3px">Instructor</div>
+              <div style="font-size:14px;line-height:1.6;font-feature-settings:'tnum'">담당 교수 · 오피스아워 수 14:00–16:00</div>
+            </div>
+          </div>
+        </div>
       </div>
-      <svg class="arrow" width="28" height="20" viewBox="0 0 28 20" fill="none"><path d="M0 10h24M16 2l8 8-8 8" stroke="currentColor" stroke-width="1.6"/></svg>
-      <div class="cube-panel">
-        <svg class="grid9 hollow" width="132" height="132" viewBox="0 0 132 132">
-          <rect class="wall" x="1" y="1" width="42" height="42"/><rect class="wall" x="45" y="1" width="42" height="42"/><rect class="wall" x="89" y="1" width="42" height="42"/>
-          <rect class="wall" x="1" y="45" width="42" height="42"/><rect class="cell" x="45" y="45" width="42" height="42"/><rect class="wall" x="89" y="45" width="42" height="42"/>
-          <rect class="wall" x="1" y="89" width="42" height="42"/><rect class="wall" x="45" y="89" width="42" height="42"/><rect class="wall" x="89" y="89" width="42" height="42"/>
-          <circle cx="66" cy="66" r="6"/>
-        </svg>
-        <span class="cap">안에서 움직인다 — 공간</span>
+      <figure style="margin:0;border-top:1px solid var(--sheet-line);padding:var(--space-8)">
+        <div class="plate" style="width:100%;height:auto;aspect-ratio:21/8;min-width:0">표지 도판 — 지난 학기 모형·도면 사진</div>
+        <figcaption style="display:flex;justify-content:space-between;gap:var(--space-6);margin-top:var(--space-3);font-feature-settings:'tnum';font-size:12px;color:color-mix(in srgb, var(--color-text) 60%, transparent)">
+          <span>Fig. 01 — 지난 학기 파빌리온 1:20 모형</span>
+          <span style="display:flex;align-items:center;gap:8px">
+            <span style="display:block;width:60px;height:6px;border:1px solid var(--color-text);background:linear-gradient(90deg,var(--color-text) 50%,transparent 50%)"></span>
+            <span>0 ─ 1m</span>
+          </span>
+        </figcaption>
+      </figure>
+    </section>
+
+    <section id="a01" style="border-bottom:1px solid var(--sheet-line)">
+      <div style="display:flex;align-items:baseline;justify-content:space-between;gap:var(--space-6);padding:var(--space-4) var(--space-8);border-bottom:1px solid var(--color-divider)">
+        <h2 style="font-size:30px;font-weight:400;margin:0">교과목 개요와 여섯 개의 키워드</h2>
+        <div style="font-family:var(--font-heading);font-size:11.5px;letter-spacing:0.16em;color:var(--color-accent-700);font-feature-settings:'tnum'">A-01</div>
       </div>
-    </div>
+      <div class="g-2col" style="display:grid;grid-template-columns:minmax(0,0.7fr) minmax(0,1.3fr)">
+        <div style="padding:var(--space-8);border-right:1px solid var(--color-divider)">
+          <div style="display:grid;grid-template-columns:minmax(0,80px) minmax(0,1fr);gap:var(--space-3);padding:var(--space-3) 0;border-bottom:1px solid var(--color-divider)">
+            <div style="font-family:var(--font-heading);font-size:12px;letter-spacing:0.06em;color:color-mix(in srgb, var(--color-text) 60%, transparent);padding-top:2px">교과목명</div>
+            <div style="font-size:13.5px;line-height:1.7;font-feature-settings:'tnum';color:color-mix(in srgb, var(--color-text) 88%, transparent)">건축설계기초 Ⅱ (Basic Architectural Design Ⅱ)</div>
+          </div>
+          <div style="display:grid;grid-template-columns:minmax(0,80px) minmax(0,1fr);gap:var(--space-3);padding:var(--space-3) 0;border-bottom:1px solid var(--color-divider)">
+            <div style="font-family:var(--font-heading);font-size:12px;letter-spacing:0.06em;color:color-mix(in srgb, var(--color-text) 60%, transparent);padding-top:2px">이수구분</div>
+            <div style="font-size:13.5px;line-height:1.7;font-feature-settings:'tnum';color:color-mix(in srgb, var(--color-text) 88%, transparent)">전공필수 · 1학년</div>
+          </div>
+          <div style="display:grid;grid-template-columns:minmax(0,80px) minmax(0,1fr);gap:var(--space-3);padding:var(--space-3) 0;border-bottom:1px solid var(--color-divider)">
+            <div style="font-family:var(--font-heading);font-size:12px;letter-spacing:0.06em;color:color-mix(in srgb, var(--color-text) 60%, transparent);padding-top:2px">학점/시간</div>
+            <div style="font-size:13.5px;line-height:1.7;font-feature-settings:'tnum';color:color-mix(in srgb, var(--color-text) 88%, transparent)">3학점 / 주 4시간 (스튜디오)</div>
+          </div>
+          <div style="display:grid;grid-template-columns:minmax(0,80px) minmax(0,1fr);gap:var(--space-3);padding:var(--space-3) 0;border-bottom:1px solid var(--color-divider)">
+            <div style="font-family:var(--font-heading);font-size:12px;letter-spacing:0.06em;color:color-mix(in srgb, var(--color-text) 60%, transparent);padding-top:2px">강의실</div>
+            <div style="font-size:13.5px;line-height:1.7;font-feature-settings:'tnum';color:color-mix(in srgb, var(--color-text) 88%, transparent)">설계실 3-2</div>
+          </div>
+          <div style="display:grid;grid-template-columns:minmax(0,80px) minmax(0,1fr);gap:var(--space-3);padding:var(--space-3) 0;border-bottom:1px solid var(--color-divider)">
+            <div style="font-family:var(--font-heading);font-size:12px;letter-spacing:0.06em;color:color-mix(in srgb, var(--color-text) 60%, transparent);padding-top:2px">수업 방식</div>
+            <div style="font-size:13.5px;line-height:1.7;font-feature-settings:'tnum';color:color-mix(in srgb, var(--color-text) 88%, transparent)">과제 기반 스튜디오 · 전체 크리틱과 데스크 크리틱 병행</div>
+          </div>
+          <div style="display:grid;grid-template-columns:minmax(0,80px) minmax(0,1fr);gap:var(--space-3);padding:var(--space-3) 0;border-bottom:1px solid var(--color-divider)">
+            <div style="font-family:var(--font-heading);font-size:12px;letter-spacing:0.06em;color:color-mix(in srgb, var(--color-text) 60%, transparent);padding-top:2px">대지</div>
+            <div style="font-size:13.5px;line-height:1.7;font-feature-settings:'tnum';color:color-mix(in srgb, var(--color-text) 88%, transparent)">P1 연성대 문화관 앞마당 · P2 안양시 만안구 안양동 934-11</div>
+          </div>
+          <div style="display:grid;grid-template-columns:minmax(0,80px) minmax(0,1fr);gap:var(--space-3);padding:var(--space-3) 0;border-bottom:1px solid var(--color-divider)">
+            <div style="font-family:var(--font-heading);font-size:12px;letter-spacing:0.06em;color:color-mix(in srgb, var(--color-text) 60%, transparent);padding-top:2px">매체</div>
+            <div style="font-size:13.5px;line-height:1.7;font-feature-settings:'tnum';color:color-mix(in srgb, var(--color-text) 88%, transparent)">1–11주 손과 모형 · 12–15주 디지털 병행</div>
+          </div>
+          <div style="display:grid;grid-template-columns:minmax(0,80px) minmax(0,1fr);gap:var(--space-3);padding:var(--space-3) 0;border-bottom:1px solid var(--color-divider)">
+            <div style="font-family:var(--font-heading);font-size:12px;letter-spacing:0.06em;color:color-mix(in srgb, var(--color-text) 60%, transparent);padding-top:2px">평가</div>
+            <div style="font-size:13.5px;line-height:1.7;font-feature-settings:'tnum';color:color-mix(in srgb, var(--color-text) 88%, transparent)">파빌리온 40 · 쉐어하우스 50 · 출석·참여 10</div>
+          </div>
+        </div>
+        <div class="g-goals" style="display:grid;grid-template-columns:repeat(3,minmax(0,1fr))">
+          <div style="padding:var(--space-6);border-right:1px solid var(--color-divider);border-bottom:1px solid var(--color-divider)">
+            <div style="display:flex;align-items:baseline;justify-content:space-between;gap:var(--space-3);margin-bottom:var(--space-3)">
+              <div style="font-family:var(--font-heading);font-size:34px;font-weight:400;color:color-mix(in srgb, var(--color-accent) 45%, transparent);font-feature-settings:'tnum';line-height:1">01</div>
+              <div style="font-family:var(--font-heading);font-size:10.5px;letter-spacing:0.14em;text-transform:uppercase;color:color-mix(in srgb, var(--color-text) 45%, transparent)">Project 1</div>
+            </div>
+            <div style="font-family:var(--font-heading);font-size:19px;margin-bottom:2px">형태를 조작한다</div>
+            <div style="font-size:11px;letter-spacing:0.08em;text-transform:uppercase;color:var(--color-accent-700);margin-bottom:8px">form</div>
+            <p style="text-align:justify;font-size:13.5px;line-height:1.8;margin:0 0 var(--space-3);color:color-mix(in srgb, var(--color-text) 76%, transparent)">덩어리를 자르고 비우고 세우는 조작으로 형태를 설명할 수 있다. 형태를 그리는 것이 아니라 다루는 것으로 이해한다.</p>
+            <p style="font-size:12.5px;line-height:1.7;margin:0;padding-top:var(--space-2);border-top:1px solid var(--color-divider);color:var(--color-accent-700)">"하나를 빼면 무엇이 무너집니까?"</p>
+          </div>
+          <div style="padding:var(--space-6);border-right:1px solid var(--color-divider);border-bottom:1px solid var(--color-divider)">
+            <div style="display:flex;align-items:baseline;justify-content:space-between;gap:var(--space-3);margin-bottom:var(--space-3)">
+              <div style="font-family:var(--font-heading);font-size:34px;font-weight:400;color:color-mix(in srgb, var(--color-accent) 45%, transparent);font-feature-settings:'tnum';line-height:1">02</div>
+              <div style="font-family:var(--font-heading);font-size:10.5px;letter-spacing:0.14em;text-transform:uppercase;color:color-mix(in srgb, var(--color-text) 45%, transparent)">Project 1</div>
+            </div>
+            <div style="font-family:var(--font-heading);font-size:19px;margin-bottom:2px">재료로 판단한다</div>
+            <div style="font-size:11px;letter-spacing:0.08em;text-transform:uppercase;color:var(--color-accent-700);margin-bottom:8px">material</div>
+            <p style="text-align:justify;font-size:13.5px;line-height:1.8;margin:0 0 var(--space-3);color:color-mix(in srgb, var(--color-text) 76%, transparent)">재료를 마감이 아니라 형태를 성립시키는 조건으로 다룬다. 모형 재료와 건축 재료를 구분할 수 있다.</p>
+            <p style="font-size:12.5px;line-height:1.7;margin:0;padding-top:var(--space-2);border-top:1px solid var(--color-divider);color:var(--color-accent-700)">"이 재료 한 장은 얼마나 큽니까?"</p>
+          </div>
+          <div style="padding:var(--space-6);border-bottom:1px solid var(--color-divider)">
+            <div style="display:flex;align-items:baseline;justify-content:space-between;gap:var(--space-3);margin-bottom:var(--space-3)">
+              <div style="font-family:var(--font-heading);font-size:34px;font-weight:400;color:color-mix(in srgb, var(--color-accent) 45%, transparent);font-feature-settings:'tnum';line-height:1">03</div>
+              <div style="font-family:var(--font-heading);font-size:10.5px;letter-spacing:0.14em;text-transform:uppercase;color:color-mix(in srgb, var(--color-text) 45%, transparent)">Project 1</div>
+            </div>
+            <div style="font-family:var(--font-heading);font-size:19px;margin-bottom:2px">몸으로 크기를 잰다</div>
+            <div style="font-size:11px;letter-spacing:0.08em;text-transform:uppercase;color:var(--color-accent-700);margin-bottom:8px">human scale</div>
+            <p style="text-align:justify;font-size:13.5px;line-height:1.8;margin:0 0 var(--space-3);color:color-mix(in srgb, var(--color-text) 76%, transparent)">크기를 도면의 숫자가 아니라 몸을 기준으로 판단한다. 눈높이·앉는 높이·통과 폭을 근거로 치수를 정한다.</p>
+            <p style="font-size:12.5px;line-height:1.7;margin:0;padding-top:var(--space-2);border-top:1px solid var(--color-divider);color:var(--color-accent-700)">"여기 서면 무엇이 보이고 무엇이 가려집니까?"</p>
+          </div>
+          <div style="padding:var(--space-6);border-right:1px solid var(--color-divider)">
+            <div style="display:flex;align-items:baseline;justify-content:space-between;gap:var(--space-3);margin-bottom:var(--space-3)">
+              <div style="font-family:var(--font-heading);font-size:34px;font-weight:400;color:color-mix(in srgb, var(--color-accent) 45%, transparent);font-feature-settings:'tnum';line-height:1">04</div>
+              <div style="font-family:var(--font-heading);font-size:10.5px;letter-spacing:0.14em;text-transform:uppercase;color:color-mix(in srgb, var(--color-text) 45%, transparent)">Project 2</div>
+            </div>
+            <div style="font-family:var(--font-heading);font-size:19px;margin-bottom:2px">거주자를 세운다</div>
+            <div style="font-size:11px;letter-spacing:0.08em;text-transform:uppercase;color:var(--color-accent-700);margin-bottom:8px">inhabitant</div>
+            <p style="text-align:justify;font-size:13.5px;line-height:1.8;margin:0 0 var(--space-3);color:color-mix(in srgb, var(--color-text) 76%, transparent)">프로그램을 받는 것이 아니라 스스로 만든다. 누가 어떻게 사는지를 정하면 필요한 공간의 목록과 크기가 따라 나온다.</p>
+            <p style="font-size:12.5px;line-height:1.7;margin:0;padding-top:var(--space-2);border-top:1px solid var(--color-divider);color:var(--color-accent-700)">"이 사람들은 왜 굳이 같이 삽니까?"</p>
+          </div>
+          <div style="padding:var(--space-6);border-right:1px solid var(--color-divider)">
+            <div style="display:flex;align-items:baseline;justify-content:space-between;gap:var(--space-3);margin-bottom:var(--space-3)">
+              <div style="font-family:var(--font-heading);font-size:34px;font-weight:400;color:color-mix(in srgb, var(--color-accent) 45%, transparent);font-feature-settings:'tnum';line-height:1">05</div>
+              <div style="font-family:var(--font-heading);font-size:10.5px;letter-spacing:0.14em;text-transform:uppercase;color:color-mix(in srgb, var(--color-text) 45%, transparent)">Project 2</div>
+            </div>
+            <div style="font-family:var(--font-heading);font-size:19px;margin-bottom:2px">동선을 설계한다</div>
+            <div style="font-size:11px;letter-spacing:0.08em;text-transform:uppercase;color:var(--color-accent-700);margin-bottom:8px">circulation</div>
+            <p style="text-align:justify;font-size:13.5px;line-height:1.8;margin:0 0 var(--space-3);color:color-mix(in srgb, var(--color-text) 76%, transparent)">동선을 선이 아니라 시간과 순서로 다룬다. 평면 위의 화살표가 아니라 겪는 장면의 연속으로 이해한다.</p>
+            <p style="font-size:12.5px;line-height:1.7;margin:0;padding-top:var(--space-2);border-top:1px solid var(--color-divider);color:var(--color-accent-700)">"내 방까지 가는 동안 누구와 마주칩니까?"</p>
+          </div>
+          <div style="padding:var(--space-6)">
+            <div style="display:flex;align-items:baseline;justify-content:space-between;gap:var(--space-3);margin-bottom:var(--space-3)">
+              <div style="font-family:var(--font-heading);font-size:34px;font-weight:400;color:color-mix(in srgb, var(--color-accent) 45%, transparent);font-feature-settings:'tnum';line-height:1">06</div>
+              <div style="font-family:var(--font-heading);font-size:10.5px;letter-spacing:0.14em;text-transform:uppercase;color:color-mix(in srgb, var(--color-text) 45%, transparent)">Project 2</div>
+            </div>
+            <div style="font-family:var(--font-heading);font-size:19px;margin-bottom:2px">공간을 배열한다</div>
+            <div style="font-size:11px;letter-spacing:0.08em;text-transform:uppercase;color:var(--color-accent-700);margin-bottom:8px">space</div>
+            <p style="text-align:justify;font-size:13.5px;line-height:1.8;margin:0 0 var(--space-3);color:color-mix(in srgb, var(--color-text) 76%, transparent)">설계를 방의 개수를 채우는 일이 아니라 성격이 다른 공간을 배열하는 일로 이해한다. 공유·반공유·개인의 위계를 만든다.</p>
+            <p style="font-size:12.5px;line-height:1.7;margin:0;padding-top:var(--space-2);border-top:1px solid var(--color-divider);color:var(--color-accent-700)">"이 공간은 누구의 것입니까?"</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="a02" style="border-bottom:1px solid var(--sheet-line)">
+      <div style="display:flex;align-items:baseline;justify-content:space-between;gap:var(--space-6);padding:var(--space-4) var(--space-8);border-bottom:1px solid var(--color-divider)">
+        <h2 style="font-size:30px;font-weight:400;margin:0">두 개의 과제</h2>
+        <div style="font-family:var(--font-heading);font-size:11.5px;letter-spacing:0.16em;color:var(--color-accent-700);font-feature-settings:'tnum'">A-02</div>
+      </div>
+      <div class="g-2col" style="display:grid;grid-template-columns:repeat(2,minmax(0,1fr))">
+        <div style="padding:var(--space-8);border-right:1px solid var(--color-divider)">
+          <div style="display:flex;align-items:baseline;justify-content:space-between;gap:var(--space-4);margin-bottom:var(--space-4);font-family:var(--font-heading);font-size:11.5px;letter-spacing:0.14em;text-transform:uppercase;font-feature-settings:'tnum'">
+            <span style="color:var(--color-accent-700)">Project 1 · Week 1–8</span>
+            <span style="color:color-mix(in srgb, var(--color-text) 55%, transparent)">배점 40</span>
+          </div>
+          <div style="display:flex;align-items:baseline;gap:var(--space-4);margin-bottom:var(--space-4)">
+            <div style="font-family:var(--font-heading);font-size:64px;font-weight:400;line-height:0.9;color:color-mix(in srgb, var(--color-accent) 40%, transparent);font-feature-settings:'tnum'">01</div>
+            <h3 style="font-size:28px;font-weight:400;margin:0">9m 큐브 · 문화관 앞마당의 파빌리온</h3>
+          </div>
+          <div class="plate" style="width:100%;height:auto;aspect-ratio:16/9;min-width:0">문화관 앞마당 대상지 사진</div>
+          <p style="text-align:justify;font-size:14.5px;line-height:1.9;margin:var(--space-4) 0 0;color:color-mix(in srgb, var(--color-text) 82%, transparent)">파빌리온에는 방의 목록이 없습니다. 기능이 없는 것이 아니라 기능이 형태를 지시하지 않는 것이며, 그래서 형태·재료·몸이 설계의 근거가 되어야 합니다. 앞마당에서 이미 사람이 머무는 자리를 찾아내고 — 계단 끝, 화단 턱, 처마 밑 — 9m 큐브 안에서 그 자리를 형태로 만듭니다.</p>
+          <hr class="hr">
+          <div style="display:grid;grid-template-columns:minmax(0,74px) minmax(0,1fr);gap:var(--space-3);padding:6px 0;border-bottom:1px solid var(--color-divider);font-size:13px;line-height:1.7">
+            <span style="font-family:var(--font-heading);font-size:11.5px;letter-spacing:0.1em;text-transform:uppercase;color:var(--color-accent-700);padding-top:3px">Site</span>
+            <span style="color:color-mix(in srgb, var(--color-text) 82%, transparent);font-feature-settings:'tnum'">연성대학교 문화관 앞마당</span>
+          </div>
+          <div style="display:grid;grid-template-columns:minmax(0,74px) minmax(0,1fr);gap:var(--space-3);padding:6px 0;border-bottom:1px solid var(--color-divider);font-size:13px;line-height:1.7">
+            <span style="font-family:var(--font-heading);font-size:11.5px;letter-spacing:0.1em;text-transform:uppercase;color:var(--color-accent-700);padding-top:3px">Volume</span>
+            <span style="color:color-mix(in srgb, var(--color-text) 82%, transparent);font-feature-settings:'tnum'">9 × 9 × 9 m 제약 상자 · 3 m 그리드 (채우지 않는다)</span>
+          </div>
+          <div style="display:grid;grid-template-columns:minmax(0,74px) minmax(0,1fr);gap:var(--space-3);padding:6px 0;border-bottom:1px solid var(--color-divider);font-size:13px;line-height:1.7">
+            <span style="font-family:var(--font-heading);font-size:11.5px;letter-spacing:0.1em;text-transform:uppercase;color:var(--color-accent-700);padding-top:3px">Material</span>
+            <span style="color:color-mix(in srgb, var(--color-text) 82%, transparent);font-feature-settings:'tnum'">① 폼보드 · 라이싱지 → ② 흙 · 나무 · 유리</span>
+          </div>
+          <div style="display:grid;grid-template-columns:minmax(0,74px) minmax(0,1fr);gap:var(--space-3);padding:6px 0;border-bottom:1px solid var(--color-divider);font-size:13px;line-height:1.7">
+            <span style="font-family:var(--font-heading);font-size:11.5px;letter-spacing:0.1em;text-transform:uppercase;color:var(--color-accent-700);padding-top:3px">Study</span>
+            <span style="color:color-mix(in srgb, var(--color-text) 82%, transparent);font-feature-settings:'tnum'">1:50 스터디 모형 누적 6개 이상</span>
+          </div>
+          <div style="display:grid;grid-template-columns:minmax(0,74px) minmax(0,1fr);gap:var(--space-3);padding:6px 0;border-bottom:1px solid var(--color-divider);font-size:13px;line-height:1.7">
+            <span style="font-family:var(--font-heading);font-size:11.5px;letter-spacing:0.1em;text-transform:uppercase;color:var(--color-accent-700);padding-top:3px">Output</span>
+            <span style="color:color-mix(in srgb, var(--color-text) 82%, transparent);font-feature-settings:'tnum'">1:20 실물모형 · 1:10 부분모형 · 설명 A3</span>
+          </div>
+        </div>
+        <div style="padding:var(--space-8)">
+          <div style="display:flex;align-items:baseline;justify-content:space-between;gap:var(--space-4);margin-bottom:var(--space-4);font-family:var(--font-heading);font-size:11.5px;letter-spacing:0.14em;text-transform:uppercase;font-feature-settings:'tnum'">
+            <span style="color:var(--color-accent-700)">Project 2 · Week 9–15</span>
+            <span style="color:color-mix(in srgb, var(--color-text) 55%, transparent)">배점 50</span>
+          </div>
+          <div style="display:flex;align-items:baseline;gap:var(--space-4);margin-bottom:var(--space-4)">
+            <div style="font-family:var(--font-heading);font-size:64px;font-weight:400;line-height:0.9;color:color-mix(in srgb, var(--color-accent) 40%, transparent);font-feature-settings:'tnum'">02</div>
+            <h3 style="font-size:28px;font-weight:400;margin:0">안양동 934-11의 쉐어하우스</h3>
+          </div>
+          <div class="plate" style="width:100%;height:auto;aspect-ratio:16/9;min-width:0">안양동 934-11 대상지 사진</div>
+          <p style="text-align:justify;font-size:14.5px;line-height:1.9;margin:var(--space-4) 0 0;color:color-mix(in srgb, var(--color-text) 82%, transparent)">'같이 살지만 따로 사는' 조건을 다룹니다. 거주자는 학생이 직접 설정하되 '왜 하필 안양동 934-11에 사는가'를 대지와 동네에서 찾아와야 합니다. 파빌리온에서 익힌 형태·재료·스케일이 여기서 배열·경계·동선으로 확장됩니다.</p>
+          <hr class="hr">
+          <div style="display:grid;grid-template-columns:minmax(0,74px) minmax(0,1fr);gap:var(--space-3);padding:6px 0;border-bottom:1px solid var(--color-divider);font-size:13px;line-height:1.7">
+            <span style="font-family:var(--font-heading);font-size:11.5px;letter-spacing:0.1em;text-transform:uppercase;color:var(--color-accent-700);padding-top:3px">Site</span>
+            <span style="color:color-mix(in srgb, var(--color-text) 82%, transparent);font-feature-settings:'tnum'">안양시 만안구 안양동 934-11</span>
+          </div>
+          <div style="display:grid;grid-template-columns:minmax(0,74px) minmax(0,1fr);gap:var(--space-3);padding:6px 0;border-bottom:1px solid var(--color-divider);font-size:13px;line-height:1.7">
+            <span style="font-family:var(--font-heading);font-size:11.5px;letter-spacing:0.1em;text-transform:uppercase;color:var(--color-accent-700);padding-top:3px">Program</span>
+            <span style="color:color-mix(in srgb, var(--color-text) 82%, transparent);font-feature-settings:'tnum'">거주자 설정은 학생 자율 · 대지 조건표 별도 배포</span>
+          </div>
+          <div style="display:grid;grid-template-columns:minmax(0,74px) minmax(0,1fr);gap:var(--space-3);padding:6px 0;border-bottom:1px solid var(--color-divider);font-size:13px;line-height:1.7">
+            <span style="font-family:var(--font-heading);font-size:11.5px;letter-spacing:0.1em;text-transform:uppercase;color:var(--color-accent-700);padding-top:3px">Focus</span>
+            <span style="color:color-mix(in srgb, var(--color-text) 82%, transparent);font-feature-settings:'tnum'">동선(시간과 순서) · 공간(공유 · 반공유 · 개인)</span>
+          </div>
+          <div style="display:grid;grid-template-columns:minmax(0,74px) minmax(0,1fr);gap:var(--space-3);padding:6px 0;border-bottom:1px solid var(--color-divider);font-size:13px;line-height:1.7">
+            <span style="font-family:var(--font-heading);font-size:11.5px;letter-spacing:0.1em;text-transform:uppercase;color:var(--color-accent-700);padding-top:3px">Study</span>
+            <span style="color:color-mix(in srgb, var(--color-text) 82%, transparent);font-feature-settings:'tnum'">손 다이어그램 3안 · 1:100 스터디 모형(권장)</span>
+          </div>
+          <div style="display:grid;grid-template-columns:minmax(0,74px) minmax(0,1fr);gap:var(--space-3);padding:6px 0;border-bottom:1px solid var(--color-divider);font-size:13px;line-height:1.7">
+            <span style="font-family:var(--font-heading);font-size:11.5px;letter-spacing:0.1em;text-transform:uppercase;color:var(--color-accent-700);padding-top:3px">Output</span>
+            <span style="color:color-mix(in srgb, var(--color-text) 82%, transparent);font-feature-settings:'tnum'">1:100 평면·단면 도면세트 · A1 패널</span>
+          </div>
+        </div>
+      </div>
+      <div style="padding:var(--space-3) var(--space-8);border-top:1px solid var(--color-divider);border-bottom:1px solid var(--color-divider);font-family:var(--font-heading);font-size:11.5px;letter-spacing:0.16em;text-transform:uppercase;color:var(--color-accent-700)">두 과제를 잇는 세 개의 다리</div>
+      <div class="g-3col" style="display:grid;grid-template-columns:repeat(3,minmax(0,1fr))">
+        <div style="padding:var(--space-6);border-right:1px solid var(--color-divider)">
+          <div style="display:flex;align-items:baseline;gap:var(--space-3);margin-bottom:var(--space-2)">
+            <span style="font-family:var(--font-heading);font-size:19px;color:var(--color-accent-700)">form</span>
+            <span style="color:color-mix(in srgb, var(--color-text) 40%, transparent)">→</span>
+            <span style="font-family:var(--font-heading);font-size:19px">공간의 배열</span>
+          </div>
+          <p style="text-align:justify;font-size:13.5px;line-height:1.85;margin:0;color:color-mix(in srgb, var(--color-text) 78%, transparent)">형태를 조작하던 손이, 이제 방과 방의 관계를 조작합니다. 빼고 비우던 판단이 그대로 평면의 판단이 됩니다.</p>
+        </div>
+        <div style="padding:var(--space-6);border-right:1px solid var(--color-divider)">
+          <div style="display:flex;align-items:baseline;gap:var(--space-3);margin-bottom:var(--space-2)">
+            <span style="font-family:var(--font-heading);font-size:19px;color:var(--color-accent-700)">material</span>
+            <span style="color:color-mix(in srgb, var(--color-text) 40%, transparent)">→</span>
+            <span style="font-family:var(--font-heading);font-size:19px">경계의 성격</span>
+          </div>
+          <p style="text-align:justify;font-size:13.5px;line-height:1.85;margin:0;color:color-mix(in srgb, var(--color-text) 78%, transparent)">덩어리를 세우던 재료가, 이제 빛과 시선과 소리를 조절합니다. 벽이 무엇으로 되어 있는지가 공간의 성격을 정합니다.</p>
+        </div>
+        <div style="padding:var(--space-6)">
+          <div style="display:flex;align-items:baseline;gap:var(--space-3);margin-bottom:var(--space-2)">
+            <span style="font-family:var(--font-heading);font-size:19px;color:var(--color-accent-700)">human scale</span>
+            <span style="color:color-mix(in srgb, var(--color-text) 40%, transparent)">→</span>
+            <span style="font-family:var(--font-heading);font-size:19px">동선</span>
+          </div>
+          <p style="text-align:justify;font-size:13.5px;line-height:1.85;margin:0;color:color-mix(in srgb, var(--color-text) 78%, transparent)">몸의 크기를 재던 감각이, 이제 몸의 움직임을 재는 감각이 됩니다. 통과 폭 900mm가 복도와 문의 근거가 됩니다.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="a03" style="border-bottom:1px solid var(--sheet-line)">
+      <div style="display:flex;align-items:baseline;justify-content:space-between;gap:var(--space-6);padding:var(--space-4) var(--space-8);border-bottom:1px solid var(--color-divider)">
+        <h2 style="font-size:30px;font-weight:400;margin:0">주차별 수업 계획</h2>
+        <div style="display:flex;align-items:baseline;gap:var(--space-6);font-feature-settings:'tnum'">
+          <span class="text-muted" style="font-size:12.5px">15주 · 전체 크리틱과 데스크 크리틱 병행</span>
+          <span style="font-family:var(--font-heading);font-size:11.5px;letter-spacing:0.16em;color:var(--color-accent-700)">A-03</span>
+        </div>
+      </div>
+      <div style="display:flex;align-items:stretch;padding:var(--space-4) var(--space-8);border-bottom:1px solid var(--color-divider);gap:1px;overflow-x:auto">
+        <a href="#w1" class="week-tab" style="flex:1 1 0;min-width:36px;text-align:center;padding:var(--space-2) 0;border-top:2px solid var(--color-accent-300);border-left:1px solid var(--color-divider);font-family:var(--font-heading);font-size:12px;font-feature-settings:'tnum';color:color-mix(in srgb, var(--color-text) 70%, transparent)">1</a>
+        <a href="#w2" class="week-tab" style="flex:1 1 0;min-width:36px;text-align:center;padding:var(--space-2) 0;border-top:2px solid var(--color-accent-300);border-left:1px solid var(--color-divider);font-family:var(--font-heading);font-size:12px;font-feature-settings:'tnum';color:color-mix(in srgb, var(--color-text) 70%, transparent)">2</a>
+        <a href="#w3" class="week-tab" style="flex:1 1 0;min-width:36px;text-align:center;padding:var(--space-2) 0;border-top:2px solid var(--color-accent-300);border-left:1px solid var(--color-divider);font-family:var(--font-heading);font-size:12px;font-feature-settings:'tnum';color:color-mix(in srgb, var(--color-text) 70%, transparent)">3</a>
+        <a href="#w4" class="week-tab" style="flex:1 1 0;min-width:36px;text-align:center;padding:var(--space-2) 0;border-top:2px solid var(--color-accent-300);border-left:1px solid var(--color-divider);font-family:var(--font-heading);font-size:12px;font-feature-settings:'tnum';color:color-mix(in srgb, var(--color-text) 70%, transparent)">4</a>
+        <a href="#w5" class="week-tab" style="flex:1 1 0;min-width:36px;text-align:center;padding:var(--space-2) 0;border-top:2px solid var(--color-accent-300);border-left:1px solid var(--color-divider);font-family:var(--font-heading);font-size:12px;font-feature-settings:'tnum';color:color-mix(in srgb, var(--color-text) 70%, transparent)">5</a>
+        <a href="#w6" class="week-tab" style="flex:1 1 0;min-width:36px;text-align:center;padding:var(--space-2) 0;border-top:2px solid var(--color-accent-300);border-left:1px solid var(--color-divider);font-family:var(--font-heading);font-size:12px;font-feature-settings:'tnum';color:color-mix(in srgb, var(--color-text) 70%, transparent)">6</a>
+        <a href="#w7" class="week-tab" style="flex:1 1 0;min-width:36px;text-align:center;padding:var(--space-2) 0;border-top:2px solid var(--color-accent-300);border-left:1px solid var(--color-divider);font-family:var(--font-heading);font-size:12px;font-feature-settings:'tnum';color:color-mix(in srgb, var(--color-text) 70%, transparent)">7</a>
+        <a href="#w8" class="week-tab" style="flex:1 1 0;min-width:36px;text-align:center;padding:var(--space-2) 0;border-top:2px solid var(--color-accent-300);border-left:1px solid var(--color-divider);font-family:var(--font-heading);font-size:12px;font-feature-settings:'tnum';color:color-mix(in srgb, var(--color-text) 70%, transparent)">8</a>
+        <a href="#w9" class="week-tab" style="flex:1 1 0;min-width:36px;text-align:center;padding:var(--space-2) 0;border-top:2px solid var(--color-accent-300);border-left:1px solid var(--color-divider);font-family:var(--font-heading);font-size:12px;font-feature-settings:'tnum';color:color-mix(in srgb, var(--color-text) 70%, transparent)">9</a>
+        <a href="#w10" class="week-tab" style="flex:1 1 0;min-width:36px;text-align:center;padding:var(--space-2) 0;border-top:2px solid var(--color-accent-300);border-left:1px solid var(--color-divider);font-family:var(--font-heading);font-size:12px;font-feature-settings:'tnum';color:color-mix(in srgb, var(--color-text) 70%, transparent)">10</a>
+        <a href="#w11" class="week-tab" style="flex:1 1 0;min-width:36px;text-align:center;padding:var(--space-2) 0;border-top:2px solid var(--color-accent-300);border-left:1px solid var(--color-divider);font-family:var(--font-heading);font-size:12px;font-feature-settings:'tnum';color:color-mix(in srgb, var(--color-text) 70%, transparent)">11</a>
+        <a href="#w12" class="week-tab" style="flex:1 1 0;min-width:36px;text-align:center;padding:var(--space-2) 0;border-top:2px solid var(--color-accent-300);border-left:1px solid var(--color-divider);font-family:var(--font-heading);font-size:12px;font-feature-settings:'tnum';color:color-mix(in srgb, var(--color-text) 70%, transparent)">12</a>
+        <a href="#w13" class="week-tab" style="flex:1 1 0;min-width:36px;text-align:center;padding:var(--space-2) 0;border-top:2px solid var(--color-accent-300);border-left:1px solid var(--color-divider);font-family:var(--font-heading);font-size:12px;font-feature-settings:'tnum';color:color-mix(in srgb, var(--color-text) 70%, transparent)">13</a>
+        <a href="#w14" class="week-tab" style="flex:1 1 0;min-width:36px;text-align:center;padding:var(--space-2) 0;border-top:2px solid var(--color-accent-300);border-left:1px solid var(--color-divider);font-family:var(--font-heading);font-size:12px;font-feature-settings:'tnum';color:color-mix(in srgb, var(--color-text) 70%, transparent)">14</a>
+        <a href="#w15" class="week-tab" style="flex:1 1 0;min-width:36px;text-align:center;padding:var(--space-2) 0;border-top:2px solid var(--color-accent-300);border-left:1px solid var(--color-divider);font-family:var(--font-heading);font-size:12px;font-feature-settings:'tnum';color:color-mix(in srgb, var(--color-text) 70%, transparent)">15</a>
+      </div>
+
+      <div id="w1" class="week-row week-row-grid" style="display:grid;grid-template-columns:minmax(0,120px) minmax(0,230px) minmax(0,1fr) minmax(0,220px);gap:var(--space-6);padding:var(--space-4) var(--space-8);border-bottom:1px solid var(--color-divider)">
+        <div><div style="font-family:var(--font-heading);font-size:26px;font-weight:400;line-height:1;font-feature-settings:'tnum';color:var(--color-accent-700)">W01</div><div style="font-size:11px;letter-spacing:0.08em;text-transform:uppercase;color:color-mix(in srgb, var(--color-text) 50%, transparent);margin-top:5px;font-feature-settings:'tnum'">Pavilion</div></div>
+        <div class="wk-title" style="font-family:var(--font-heading);font-size:19px;line-height:1.3">오리엔테이션 · 기능이 없다는 것</div>
+        <p class="wk-body" style="text-align:justify;font-size:14px;line-height:1.8;margin:0;color:color-mix(in srgb, var(--color-text) 82%, transparent)">스튜디오 운영 방식 안내. '파빌리온에 기능이 없다'는 말의 뜻과 9m 큐브·3m 그리드 조건 제시. 몸의 치수표 배포.</p>
+        <div class="wk-task" style="font-size:12.5px;line-height:1.7;color:color-mix(in srgb, var(--color-text) 62%, transparent);border-left:1px solid var(--color-divider);padding-left:var(--space-4)">대지 조사 5항목 · 재료 실험체 5개</div>
+      </div>
+      <div id="w2" class="week-row week-row-grid" style="display:grid;grid-template-columns:minmax(0,120px) minmax(0,230px) minmax(0,1fr) minmax(0,220px);gap:var(--space-6);padding:var(--space-4) var(--space-8);border-bottom:1px solid var(--color-divider)">
+        <div><div style="font-family:var(--font-heading);font-size:26px;font-weight:400;line-height:1;font-feature-settings:'tnum';color:var(--color-accent-700)">W02</div><div style="font-size:11px;letter-spacing:0.08em;text-transform:uppercase;color:color-mix(in srgb, var(--color-text) 50%, transparent);margin-top:5px;font-feature-settings:'tnum'">Pavilion</div></div>
+        <div class="wk-title" style="font-family:var(--font-heading);font-size:19px;line-height:1.3">대지 조사와 재료 실험</div>
+        <p class="wk-body" style="text-align:justify;font-size:14px;line-height:1.8;margin:0;color:color-mix(in srgb, var(--color-text) 82%, transparent)">문화관 앞마당의 다섯 항목 조사 합평 — 이미 사람이 머무는 자리를 찾는다. 폼보드·라이싱지 실험체 공유.</p>
+        <div class="wk-task" style="font-size:12.5px;line-height:1.7;color:color-mix(in srgb, var(--color-text) 62%, transparent);border-left:1px solid var(--color-divider);padding-left:var(--space-4)">대지 조사 A3 1장 · 실험체 5개</div>
+      </div>
+      <div id="w3" class="week-row week-row-grid" style="display:grid;grid-template-columns:minmax(0,120px) minmax(0,230px) minmax(0,1fr) minmax(0,220px);gap:var(--space-6);padding:var(--space-4) var(--space-8);border-bottom:1px solid var(--color-divider)">
+        <div><div style="font-family:var(--font-heading);font-size:26px;font-weight:400;line-height:1;font-feature-settings:'tnum';color:var(--color-accent-700)">W03</div><div style="font-size:11px;letter-spacing:0.08em;text-transform:uppercase;color:color-mix(in srgb, var(--color-text) 50%, transparent);margin-top:5px;font-feature-settings:'tnum'">Pavilion</div></div>
+        <div class="wk-title" style="font-family:var(--font-heading);font-size:19px;line-height:1.3">매스 스터디 ①</div>
+        <p class="wk-body" style="text-align:justify;font-size:14px;line-height:1.8;margin:0;color:color-mix(in srgb, var(--color-text) 82%, transparent)">3m 그리드 27셀에서 빼기·쌓기·비우기. 형태 대안을 양으로 밀어붙인다.</p>
+        <div class="wk-task" style="font-size:12.5px;line-height:1.7;color:color-mix(in srgb, var(--color-text) 62%, transparent);border-left:1px solid var(--color-divider);padding-left:var(--space-4)">1:50 스터디 모형 3개</div>
+      </div>
+      <div id="w4" class="week-row week-row-grid" style="display:grid;grid-template-columns:minmax(0,120px) minmax(0,230px) minmax(0,1fr) minmax(0,220px);gap:var(--space-6);padding:var(--space-4) var(--space-8);border-bottom:1px solid var(--color-divider)">
+        <div><div style="font-family:var(--font-heading);font-size:26px;font-weight:400;line-height:1;font-feature-settings:'tnum';color:var(--color-accent-700)">W04</div><div style="font-size:11px;letter-spacing:0.08em;text-transform:uppercase;color:color-mix(in srgb, var(--color-text) 50%, transparent);margin-top:5px;font-feature-settings:'tnum'">Pavilion</div></div>
+        <div class="wk-title" style="font-family:var(--font-heading);font-size:19px;line-height:1.3">매스 스터디 ②</div>
+        <p class="wk-body" style="text-align:justify;font-size:14px;line-height:1.8;margin:0;color:color-mix(in srgb, var(--color-text) 82%, transparent)">대안을 압축해 1안을 고른다. 왜 이것인지 말로 설명한다. 개별 데스크 크리틱.</p>
+        <div class="wk-task" style="font-size:12.5px;line-height:1.7;color:color-mix(in srgb, var(--color-text) 62%, transparent);border-left:1px solid var(--color-divider);padding-left:var(--space-4)">1:50 모형 3개 (누적 6개)</div>
+      </div>
+      <div id="w5" class="week-row week-row-grid" style="display:grid;grid-template-columns:minmax(0,120px) minmax(0,230px) minmax(0,1fr) minmax(0,220px);gap:var(--space-6);padding:var(--space-4) var(--space-8);border-bottom:1px solid var(--color-divider)">
+        <div><div style="font-family:var(--font-heading);font-size:26px;font-weight:400;line-height:1;font-feature-settings:'tnum';color:var(--color-accent-700)">W05</div><div style="font-size:11px;letter-spacing:0.08em;text-transform:uppercase;color:color-mix(in srgb, var(--color-text) 50%, transparent);margin-top:5px;font-feature-settings:'tnum'">Pavilion</div></div>
+        <div class="wk-title" style="font-family:var(--font-heading);font-size:19px;line-height:1.3">앞마당 1:1 테이핑</div>
+        <p class="wk-body" style="text-align:justify;font-size:14px;line-height:1.8;margin:0;color:color-mix(in srgb, var(--color-text) 82%, transparent)">현장에서 9×9m를 마스킹테이프로 그리고 그 안에 서 본다. 몸으로 확인한 뒤 크기를 조정한다.</p>
+        <div class="wk-task" style="font-size:12.5px;line-height:1.7;color:color-mix(in srgb, var(--color-text) 62%, transparent);border-left:1px solid var(--color-divider);padding-left:var(--space-4)">수정된 1:50 모형</div>
+      </div>
+      <div id="w6" class="week-row week-row-grid" style="display:grid;grid-template-columns:minmax(0,120px) minmax(0,230px) minmax(0,1fr) minmax(0,220px);gap:var(--space-6);padding:var(--space-4) var(--space-8);border-bottom:1px solid var(--color-divider)">
+        <div><div style="font-family:var(--font-heading);font-size:26px;font-weight:400;line-height:1;font-feature-settings:'tnum';color:var(--color-accent-700)">W06</div><div style="font-size:11px;letter-spacing:0.08em;text-transform:uppercase;color:color-mix(in srgb, var(--color-text) 50%, transparent);margin-top:5px;font-feature-settings:'tnum'">Pavilion</div></div>
+        <div class="wk-title" style="font-family:var(--font-heading);font-size:19px;line-height:1.3">재료 번역</div>
+        <p class="wk-body" style="text-align:justify;font-size:14px;line-height:1.8;margin:0;color:color-mix(in srgb, var(--color-text) 82%, transparent)">흙·나무·유리 중 선택. 재료 한 장의 크기를 알고 이음매의 위치를 결정한다.</p>
+        <div class="wk-task" style="font-size:12.5px;line-height:1.7;color:color-mix(in srgb, var(--color-text) 62%, transparent);border-left:1px solid var(--color-divider);padding-left:var(--space-4)">1:10 부분 모형 (접합부 1개)</div>
+      </div>
+      <div id="w7" class="week-row week-row-grid" style="display:grid;grid-template-columns:minmax(0,120px) minmax(0,230px) minmax(0,1fr) minmax(0,220px);gap:var(--space-6);padding:var(--space-4) var(--space-8);border-bottom:1px solid var(--color-divider)">
+        <div><div style="font-family:var(--font-heading);font-size:26px;font-weight:400;line-height:1;font-feature-settings:'tnum';color:var(--color-accent-700)">W07</div><div style="font-size:11px;letter-spacing:0.08em;text-transform:uppercase;color:color-mix(in srgb, var(--color-text) 50%, transparent);margin-top:5px;font-feature-settings:'tnum'">Pavilion</div></div>
+        <div class="wk-title" style="font-family:var(--font-heading);font-size:19px;line-height:1.3">최종 모형 제작</div>
+        <p class="wk-body" style="text-align:justify;font-size:14px;line-height:1.8;margin:0;color:color-mix(in srgb, var(--color-text) 82%, transparent)">1:20 모형 제작과 마감. 사람 피규어를 반드시 세운다. 도면·모형 일치 점검.</p>
+        <div class="wk-task" style="font-size:12.5px;line-height:1.7;color:color-mix(in srgb, var(--color-text) 62%, transparent);border-left:1px solid var(--color-divider);padding-left:var(--space-4)">1:20 제작 중간 점검</div>
+      </div>
+      <div id="w8" class="week-row week-row-grid" style="display:grid;grid-template-columns:minmax(0,120px) minmax(0,230px) minmax(0,1fr) minmax(0,220px);gap:var(--space-6);padding:var(--space-4) var(--space-8);border-bottom:1px solid var(--color-divider)">
+        <div><div style="font-family:var(--font-heading);font-size:26px;font-weight:400;line-height:1;font-feature-settings:'tnum';color:var(--color-accent-700)">W08</div><div style="font-size:11px;letter-spacing:0.08em;text-transform:uppercase;color:color-mix(in srgb, var(--color-text) 50%, transparent);margin-top:5px;font-feature-settings:'tnum'">Pavilion</div></div>
+        <div class="wk-title" style="font-family:var(--font-heading);font-size:19px;line-height:1.3">Project 1 최종 크리틱</div>
+        <p class="wk-body" style="text-align:justify;font-size:14px;line-height:1.8;margin:0;color:color-mix(in srgb, var(--color-text) 82%, transparent)">전체 합평. '이 재료라서 이 형태가 가능했다'를 자기 말로 설명한다.</p>
+        <div class="wk-task" style="font-size:12.5px;line-height:1.7;color:color-mix(in srgb, var(--color-text) 62%, transparent);border-left:1px solid var(--color-divider);padding-left:var(--space-4)">1:20 실물모형 · 설명 A3</div>
+      </div>
+      <div id="w9" class="week-row week-row-grid" style="display:grid;grid-template-columns:minmax(0,120px) minmax(0,230px) minmax(0,1fr) minmax(0,220px);gap:var(--space-6);padding:var(--space-4) var(--space-8);border-bottom:1px solid var(--color-divider)">
+        <div><div style="font-family:var(--font-heading);font-size:26px;font-weight:400;line-height:1;font-feature-settings:'tnum';color:var(--color-accent-700)">W09</div><div style="font-size:11px;letter-spacing:0.08em;text-transform:uppercase;color:color-mix(in srgb, var(--color-text) 50%, transparent);margin-top:5px;font-feature-settings:'tnum'">Share House</div></div>
+        <div class="wk-title" style="font-family:var(--font-heading);font-size:19px;line-height:1.3">Project 2 시작 · 대지 답사</div>
+        <p class="wk-body" style="text-align:justify;font-size:14px;line-height:1.8;margin:0;color:color-mix(in srgb, var(--color-text) 82%, transparent)">안양동 934-11 조건표 배포와 현장 답사. 골목·이웃·해·걸어서 5분 거리를 기록한다.</p>
+        <div class="wk-task" style="font-size:12.5px;line-height:1.7;color:color-mix(in srgb, var(--color-text) 62%, transparent);border-left:1px solid var(--color-divider);padding-left:var(--space-4)">현장 기록 노트</div>
+      </div>
+      <div id="w10" class="week-row week-row-grid" style="display:grid;grid-template-columns:minmax(0,120px) minmax(0,230px) minmax(0,1fr) minmax(0,220px);gap:var(--space-6);padding:var(--space-4) var(--space-8);border-bottom:1px solid var(--color-divider)">
+        <div><div style="font-family:var(--font-heading);font-size:26px;font-weight:400;line-height:1;font-feature-settings:'tnum';color:var(--color-accent-700)">W10</div><div style="font-size:11px;letter-spacing:0.08em;text-transform:uppercase;color:color-mix(in srgb, var(--color-text) 50%, transparent);margin-top:5px;font-feature-settings:'tnum'">Share House</div></div>
+        <div class="wk-title" style="font-family:var(--font-heading);font-size:19px;line-height:1.3">거주자 설정</div>
+        <p class="wk-body" style="text-align:justify;font-size:14px;line-height:1.8;margin:0;color:color-mix(in srgb, var(--color-text) 82%, transparent)">'왜 하필 여기에 삽니까?' 설정의 타당성을 대지와 동네에서 검증한다.</p>
+        <div class="wk-task" style="font-size:12.5px;line-height:1.7;color:color-mix(in srgb, var(--color-text) 62%, transparent);border-left:1px solid var(--color-divider);padding-left:var(--space-4)">거주자 설정 A3 · 대지 조사 A3</div>
+      </div>
+      <div id="w11" class="week-row week-row-grid" style="display:grid;grid-template-columns:minmax(0,120px) minmax(0,230px) minmax(0,1fr) minmax(0,220px);gap:var(--space-6);padding:var(--space-4) var(--space-8);border-bottom:1px solid var(--color-divider)">
+        <div><div style="font-family:var(--font-heading);font-size:26px;font-weight:400;line-height:1;font-feature-settings:'tnum';color:var(--color-accent-700)">W11</div><div style="font-size:11px;letter-spacing:0.08em;text-transform:uppercase;color:color-mix(in srgb, var(--color-text) 50%, transparent);margin-top:5px;font-feature-settings:'tnum'">Share House</div></div>
+        <div class="wk-title" style="font-family:var(--font-heading);font-size:19px;line-height:1.3">영역과 동선 다이어그램</div>
+        <p class="wk-body" style="text-align:justify;font-size:14px;line-height:1.8;margin:0;color:color-mix(in srgb, var(--color-text) 82%, transparent)">공유·반공유·개인의 배열. 동선을 선이 아니라 시간과 순서로 그린다. 반드시 손으로.</p>
+        <div class="wk-task" style="font-size:12.5px;line-height:1.7;color:color-mix(in srgb, var(--color-text) 62%, transparent);border-left:1px solid var(--color-divider);padding-left:var(--space-4)">손 다이어그램 3안</div>
+      </div>
+      <div id="w12" class="week-row week-row-grid" style="display:grid;grid-template-columns:minmax(0,120px) minmax(0,230px) minmax(0,1fr) minmax(0,220px);gap:var(--space-6);padding:var(--space-4) var(--space-8);border-bottom:1px solid var(--color-divider)">
+        <div><div style="font-family:var(--font-heading);font-size:26px;font-weight:400;line-height:1;font-feature-settings:'tnum';color:var(--color-accent-700)">W12</div><div style="font-size:11px;letter-spacing:0.08em;text-transform:uppercase;color:color-mix(in srgb, var(--color-text) 50%, transparent);margin-top:5px;font-feature-settings:'tnum'">Share House</div></div>
+        <div class="wk-title" style="font-family:var(--font-heading);font-size:19px;line-height:1.3">평면 1차</div>
+        <p class="wk-body" style="text-align:justify;font-size:14px;line-height:1.8;margin:0;color:color-mix(in srgb, var(--color-text) 82%, transparent)">다이어그램을 평면으로 번역한다. 디지털 도구는 여기서부터 — 결정된 설계를 옮기는 도구로만 쓴다.</p>
+        <div class="wk-task" style="font-size:12.5px;line-height:1.7;color:color-mix(in srgb, var(--color-text) 62%, transparent);border-left:1px solid var(--color-divider);padding-left:var(--space-4)">1:100 배치 · 평면 초안</div>
+      </div>
+      <div id="w13" class="week-row week-row-grid" style="display:grid;grid-template-columns:minmax(0,120px) minmax(0,230px) minmax(0,1fr) minmax(0,220px);gap:var(--space-6);padding:var(--space-4) var(--space-8);border-bottom:1px solid var(--color-divider)">
+        <div><div style="font-family:var(--font-heading);font-size:26px;font-weight:400;line-height:1;font-feature-settings:'tnum';color:var(--color-accent-700)">W13</div><div style="font-size:11px;letter-spacing:0.08em;text-transform:uppercase;color:color-mix(in srgb, var(--color-text) 50%, transparent);margin-top:5px;font-feature-settings:'tnum'">Share House</div></div>
+        <div class="wk-title" style="font-family:var(--font-heading);font-size:19px;line-height:1.3">단면과 입면</div>
+        <p class="wk-body" style="text-align:justify;font-size:14px;line-height:1.8;margin:0;color:color-mix(in srgb, var(--color-text) 82%, transparent)">높이·빛·시선. 파빌리온의 세 키워드를 여기서 다시 적용한다.</p>
+        <div class="wk-task" style="font-size:12.5px;line-height:1.7;color:color-mix(in srgb, var(--color-text) 62%, transparent);border-left:1px solid var(--color-divider);padding-left:var(--space-4)">1:100 평면 · 단면 1세트</div>
+      </div>
+      <div id="w14" class="week-row week-row-grid" style="display:grid;grid-template-columns:minmax(0,120px) minmax(0,230px) minmax(0,1fr) minmax(0,220px);gap:var(--space-6);padding:var(--space-4) var(--space-8);border-bottom:1px solid var(--color-divider)">
+        <div><div style="font-family:var(--font-heading);font-size:26px;font-weight:400;line-height:1;font-feature-settings:'tnum';color:var(--color-accent-700)">W14</div><div style="font-size:11px;letter-spacing:0.08em;text-transform:uppercase;color:color-mix(in srgb, var(--color-text) 50%, transparent);margin-top:5px;font-feature-settings:'tnum'">Share House</div></div>
+        <div class="wk-title" style="font-family:var(--font-heading);font-size:19px;line-height:1.3">도면 세트와 패널</div>
+        <p class="wk-body" style="text-align:justify;font-size:14px;line-height:1.8;margin:0;color:color-mix(in srgb, var(--color-text) 82%, transparent)">도면 규약 점검, 선의 위계와 치수 표기. 패널 레이아웃 편집.</p>
+        <div class="wk-task" style="font-size:12.5px;line-height:1.7;color:color-mix(in srgb, var(--color-text) 62%, transparent);border-left:1px solid var(--color-divider);padding-left:var(--space-4)">패널 초안 A1 흑백</div>
+      </div>
+      <div id="w15" class="week-row week-row-grid" style="display:grid;grid-template-columns:minmax(0,120px) minmax(0,230px) minmax(0,1fr) minmax(0,220px);gap:var(--space-6);padding:var(--space-4) var(--space-8)">
+        <div><div style="font-family:var(--font-heading);font-size:26px;font-weight:400;line-height:1;font-feature-settings:'tnum';color:var(--color-accent-700)">W15</div><div style="font-size:11px;letter-spacing:0.08em;text-transform:uppercase;color:color-mix(in srgb, var(--color-text) 50%, transparent);margin-top:5px;font-feature-settings:'tnum'">Share House</div></div>
+        <div class="wk-title" style="font-family:var(--font-heading);font-size:19px;line-height:1.3">학기 최종 발표</div>
+        <p class="wk-body" style="text-align:justify;font-size:14px;line-height:1.8;margin:0;color:color-mix(in srgb, var(--color-text) 82%, transparent)">거주자 → 동선 → 공간의 인과를 끊김 없이 설명한다. 두 과제 통합 전시와 합평.</p>
+        <div class="wk-task" style="font-size:12.5px;line-height:1.7;color:color-mix(in srgb, var(--color-text) 62%, transparent);border-left:1px solid var(--color-divider);padding-left:var(--space-4)">A1 패널 · 도면세트</div>
+      </div>
+    </section>
+
+    <section id="a04" style="border-bottom:1px solid var(--sheet-line)">
+      <div style="display:flex;align-items:baseline;justify-content:space-between;gap:var(--space-6);padding:var(--space-4) var(--space-8);border-bottom:1px solid var(--color-divider)">
+        <h2 style="font-size:30px;font-weight:400;margin:0">평가와 준비물</h2>
+        <div style="font-family:var(--font-heading);font-size:11.5px;letter-spacing:0.16em;color:var(--color-accent-700);font-feature-settings:'tnum'">A-04</div>
+      </div>
+      <div class="g-2col" style="display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr)">
+        <div style="padding:var(--space-8);border-right:1px solid var(--color-divider)">
+          <div style="display:flex;gap:2px;margin-bottom:var(--space-6)">
+            <div style="flex:40 1 0;min-width:0;height:var(--space-4);border:1px solid var(--color-accent);background:var(--color-accent-100)"></div>
+            <div style="flex:50 1 0;min-width:0;height:var(--space-4);border:1px solid var(--color-accent);background:var(--color-accent-100)"></div>
+            <div style="flex:10 1 0;min-width:0;height:var(--space-4);border:1px solid var(--color-accent);background:var(--color-accent-100)"></div>
+          </div>
+          <div style="display:grid;grid-template-columns:minmax(0,200px) minmax(0,1fr) minmax(0,56px);gap:var(--space-4);padding:var(--space-3) 0;border-bottom:1px solid var(--color-divider)">
+            <div style="font-family:var(--font-heading);font-size:17px">Project 1 · 파빌리온</div>
+            <div style="font-size:13px;line-height:1.7;color:color-mix(in srgb, var(--color-text) 76%, transparent)">form 12 · material 10 · human scale 10 · 대지 읽기 4 · 모형 완성도 4</div>
+            <div style="text-align:right;font-family:var(--font-heading);font-size:20px;color:var(--color-accent-700);font-feature-settings:'tnum'">40</div>
+          </div>
+          <div style="display:grid;grid-template-columns:minmax(0,200px) minmax(0,1fr) minmax(0,56px);gap:var(--space-4);padding:var(--space-3) 0;border-bottom:1px solid var(--color-divider)">
+            <div style="font-family:var(--font-heading);font-size:17px">Project 2 · 쉐어하우스</div>
+            <div style="font-size:13px;line-height:1.7;color:color-mix(in srgb, var(--color-text) 76%, transparent)">거주자 8 · 동선 12 · 공간 12 · Part 1 재적용 6 · 도면 8 · 패널과 발표 4</div>
+            <div style="text-align:right;font-family:var(--font-heading);font-size:20px;color:var(--color-accent-700);font-feature-settings:'tnum'">50</div>
+          </div>
+          <div style="display:grid;grid-template-columns:minmax(0,200px) minmax(0,1fr) minmax(0,56px);gap:var(--space-4);padding:var(--space-3) 0;border-bottom:1px solid var(--color-divider)">
+            <div style="font-family:var(--font-heading);font-size:17px">출석 · 참여</div>
+            <div style="font-size:13px;line-height:1.7;color:color-mix(in srgb, var(--color-text) 76%, transparent)">주간 크리틱 준비 상태 (지각 3회 = 결석 1회)</div>
+            <div style="text-align:right;font-family:var(--font-heading);font-size:20px;color:var(--color-accent-700);font-feature-settings:'tnum'">10</div>
+          </div>
+          <p class="text-muted" style="font-size:12.5px;line-height:1.8;margin-top:var(--space-4);text-align:justify">완성도만이 아니라 학기 동안의 변화 폭을 함께 봅니다. 매주 크리틱 기록이 남으므로, 과정 없이 결과만 제출된 작업은 높은 점수를 받기 어렵습니다.</p>
+        </div>
+        <div style="padding:var(--space-8)">
+          <h3 style="font-size:22px;font-weight:400;margin:0 0 var(--space-4)">준비물</h3>
+          <div style="display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:var(--space-6)">
+            <div style="border-top:1px solid var(--color-text);padding-top:var(--space-3)">
+              <div style="font-family:var(--font-heading);font-size:17px;margin-bottom:6px">제도 도구</div>
+              <p style="font-size:13px;line-height:1.8;margin:0;color:color-mix(in srgb, var(--color-text) 76%, transparent)">삼각축척자, 30cm 삼각자, 샤프(0.3·0.5), 트레이싱지, 제도용 테이프</p>
+            </div>
+            <div style="border-top:1px solid var(--color-text);padding-top:var(--space-3)">
+              <div style="font-family:var(--font-heading);font-size:17px;margin-bottom:6px">모형 재료 ①</div>
+              <p style="font-size:13px;line-height:1.8;margin:0;color:color-mix(in srgb, var(--color-text) 76%, transparent)">폼보드 3mm, 라이싱지, 커터, 목공용 풀, 컷팅 매트 — 1~5주 재료 실험과 1:50 스터디</p>
+            </div>
+            <div style="border-top:1px solid var(--color-text);padding-top:var(--space-3)">
+              <div style="font-family:var(--font-heading);font-size:17px;margin-bottom:6px">모형 재료 ②</div>
+              <p style="font-size:13px;line-height:1.8;margin:0;color:color-mix(in srgb, var(--color-text) 76%, transparent)">바스우드 각재, 투명 시트, 석고 또는 점토 — 6주 이후 재료 번역용</p>
+            </div>
+            <div style="border-top:1px solid var(--color-text);padding-top:var(--space-3)">
+              <div style="font-family:var(--font-heading);font-size:17px;margin-bottom:6px">현장 · 기록</div>
+              <p style="font-size:13px;line-height:1.8;margin:0;color:color-mix(in srgb, var(--color-text) 76%, transparent)">줄자 5m, 마스킹테이프 1롤(5주 1:1 테이핑), A5 스케치북 1권</p>
+            </div>
+            <div style="border-top:1px solid var(--color-text);padding-top:var(--space-3)">
+              <div style="font-family:var(--font-heading);font-size:17px;margin-bottom:6px">디지털</div>
+              <p style="font-size:13px;line-height:1.8;margin:0;color:color-mix(in srgb, var(--color-text) 76%, transparent)">AutoCAD 또는 Vectorworks(학생용 무료), SketchUp, Adobe InDesign</p>
+            </div>
+            <div style="border-top:1px solid var(--color-text);padding-top:var(--space-3)">
+              <div style="font-family:var(--font-heading);font-size:17px;margin-bottom:6px">안전</div>
+              <p style="font-size:13px;line-height:1.8;margin:0;color:color-mix(in srgb, var(--color-text) 76%, transparent)">커터 매트와 장갑 — 야간 작업은 2인 이상일 때만</p>
+            </div>
+          </div>
+          <hr class="hr" style="margin:var(--space-8) 0 var(--space-6)">
+          <h3 style="font-size:22px;font-weight:400;margin:0 0 var(--space-4)">참고 도서</h3>
+          <div style="display:flex;flex-direction:column;gap:var(--space-2);font-size:13px;line-height:1.75">
+            <div style="display:grid;grid-template-columns:minmax(0,26px) minmax(0,1fr);gap:var(--space-2);padding-bottom:var(--space-2);border-bottom:1px solid var(--color-divider)">
+              <span style="color:var(--color-accent);font-family:var(--font-heading);font-feature-settings:'tnum'">01</span>
+              <span style="color:color-mix(in srgb, var(--color-text) 84%, transparent)">프란시스 D. K. 칭, 『건축의 형태·공간·질서』</span>
+            </div>
+            <div style="display:grid;grid-template-columns:minmax(0,26px) minmax(0,1fr);gap:var(--space-2);padding-bottom:var(--space-2);border-bottom:1px solid var(--color-divider)">
+              <span style="color:var(--color-accent);font-family:var(--font-heading);font-feature-settings:'tnum'">02</span>
+              <span style="color:color-mix(in srgb, var(--color-text) 84%, transparent)">김광현, 『건축이라는 가능성』</span>
+            </div>
+            <div style="display:grid;grid-template-columns:minmax(0,26px) minmax(0,1fr);gap:var(--space-2);padding-bottom:var(--space-2);border-bottom:1px solid var(--color-divider)">
+              <span style="color:var(--color-accent);font-family:var(--font-heading);font-feature-settings:'tnum'">03</span>
+              <span style="color:color-mix(in srgb, var(--color-text) 84%, transparent)">야마모토 리켄 외, 『마을을 만드는 집』 — 공동주거 사례</span>
+            </div>
+            <div style="display:grid;grid-template-columns:minmax(0,26px) minmax(0,1fr);gap:var(--space-2);padding-bottom:var(--space-2);border-bottom:1px solid var(--color-divider)">
+              <span style="color:var(--color-accent);font-family:var(--font-heading);font-feature-settings:'tnum'">04</span>
+              <span style="color:color-mix(in srgb, var(--color-text) 84%, transparent)">토지이음(eum.go.kr) · 국가법령정보센터 — 대지 조건과 안양시 조례</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div style="border-top:1px solid var(--color-text);padding:var(--space-6) var(--space-8)">
+        <div style="display:flex;align-items:baseline;justify-content:space-between;gap:var(--space-6);margin-bottom:var(--space-4)">
+          <h3 style="font-size:22px;font-weight:400;margin:0">키워드별 성취수준</h3>
+          <span class="text-muted" style="font-size:12.5px">학기 첫 주에 배포합니다 — 무엇을 보는지 미리 아는 편이 낫습니다</span>
+        </div>
+        <div style="display:grid;grid-template-columns:minmax(0,130px) repeat(3,minmax(0,1fr));gap:var(--space-4);padding:var(--space-2) 0;border-bottom:1px solid var(--color-text);font-family:var(--font-heading);font-size:11.5px;letter-spacing:0.14em;text-transform:uppercase;color:var(--color-accent-700)">
+          <div>Keyword</div><div>A · 우수</div><div>B · 보통</div><div>C · 미흡</div>
+        </div>
+        <div style="display:grid;grid-template-columns:minmax(0,130px) repeat(3,minmax(0,1fr));gap:var(--space-4);padding:var(--space-3) 0;border-bottom:1px solid var(--color-divider);font-size:13px;line-height:1.7">
+          <div style="font-family:var(--font-heading);font-size:17px">form</div>
+          <div style="color:color-mix(in srgb, var(--color-text) 88%, transparent)">형태를 만든 조작을 말로 설명하고, 하나를 바꾸면 무엇이 무너지는지 안다</div>
+          <div style="color:color-mix(in srgb, var(--color-text) 74%, transparent)">형태를 설명하지만 근거가 취향에 머문다</div>
+          <div style="color:color-mix(in srgb, var(--color-text) 60%, transparent)">형태의 이유를 설명하지 못한다</div>
+        </div>
+        <div style="display:grid;grid-template-columns:minmax(0,130px) repeat(3,minmax(0,1fr));gap:var(--space-4);padding:var(--space-3) 0;border-bottom:1px solid var(--color-divider);font-size:13px;line-height:1.7">
+          <div style="font-family:var(--font-heading);font-size:17px">material</div>
+          <div style="color:color-mix(in srgb, var(--color-text) 88%, transparent)">재료 한 장의 크기와 이음매 위치를 결정했고 그것이 형태에 나타난다</div>
+          <div style="color:color-mix(in srgb, var(--color-text) 74%, transparent)">재료를 정했으나 이음매·접합 고려가 없다</div>
+          <div style="color:color-mix(in srgb, var(--color-text) 60%, transparent)">재료를 색과 인상으로만 다룬다</div>
+        </div>
+        <div style="display:grid;grid-template-columns:minmax(0,130px) repeat(3,minmax(0,1fr));gap:var(--space-4);padding:var(--space-3) 0;border-bottom:1px solid var(--color-divider);font-size:13px;line-height:1.7">
+          <div style="font-family:var(--font-heading);font-size:17px">human scale</div>
+          <div style="color:color-mix(in srgb, var(--color-text) 88%, transparent)">몸의 치수를 근거로 높이·폭을 정했고 모형에 사람이 있다</div>
+          <div style="color:color-mix(in srgb, var(--color-text) 74%, transparent)">사람을 세웠으나 치수의 근거가 없다</div>
+          <div style="color:color-mix(in srgb, var(--color-text) 60%, transparent)">실제 크기로 환산하면 사람이 쓸 수 없다</div>
+        </div>
+        <div style="display:grid;grid-template-columns:minmax(0,130px) repeat(3,minmax(0,1fr));gap:var(--space-4);padding:var(--space-3) 0;border-bottom:1px solid var(--color-divider);font-size:13px;line-height:1.7">
+          <div style="font-family:var(--font-heading);font-size:17px">거주자</div>
+          <div style="color:color-mix(in srgb, var(--color-text) 88%, transparent)">대지와 동네에서 설정의 근거를 찾았다</div>
+          <div style="color:color-mix(in srgb, var(--color-text) 74%, transparent)">설정은 있으나 대지와 무관하다</div>
+          <div style="color:color-mix(in srgb, var(--color-text) 60%, transparent)">설정이 없거나 임의적이다</div>
+        </div>
+        <div style="display:grid;grid-template-columns:minmax(0,130px) repeat(3,minmax(0,1fr));gap:var(--space-4);padding:var(--space-3) 0;border-bottom:1px solid var(--color-divider);font-size:13px;line-height:1.7">
+          <div style="font-family:var(--font-heading);font-size:17px">동선</div>
+          <div style="color:color-mix(in srgb, var(--color-text) 88%, transparent)">현관에서 개인실까지의 순서와 마주침을 설계로 조절했다</div>
+          <div style="color:color-mix(in srgb, var(--color-text) 74%, transparent)">동선을 그렸으나 선을 잇는 데 그친다</div>
+          <div style="color:color-mix(in srgb, var(--color-text) 60%, transparent)">방을 배치했을 뿐 동선이 없다</div>
+        </div>
+        <div style="display:grid;grid-template-columns:minmax(0,130px) repeat(3,minmax(0,1fr));gap:var(--space-4);padding:var(--space-3) 0;border-bottom:1px solid var(--color-divider);font-size:13px;line-height:1.7">
+          <div style="font-family:var(--font-heading);font-size:17px">공간</div>
+          <div style="color:color-mix(in srgb, var(--color-text) 88%, transparent)">공유·반공유·개인의 성격 차이가 배열로 드러난다</div>
+          <div style="color:color-mix(in srgb, var(--color-text) 74%, transparent)">영역은 나눴으나 성격 차이가 공간에 없다</div>
+          <div style="color:color-mix(in srgb, var(--color-text) 60%, transparent)">방의 목록만 있다</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="a05" style="border-bottom:1px solid var(--sheet-line)">
+      <div style="display:flex;align-items:baseline;justify-content:space-between;gap:var(--space-6);padding:var(--space-4) var(--space-8);border-bottom:1px solid var(--color-divider)">
+        <h2 style="font-size:30px;font-weight:400;margin:0">참고 사례</h2>
+        <div style="display:flex;align-items:baseline;gap:var(--space-6)">
+          <span class="text-muted" style="font-size:12.5px">그냥 보면 이미지만 봅니다 — 무엇을 볼지 함께 봅니다</span>
+          <span style="font-family:var(--font-heading);font-size:11.5px;letter-spacing:0.16em;color:var(--color-accent-700);font-feature-settings:'tnum'">A-05</span>
+        </div>
+      </div>
+      <div class="g-2col" style="display:grid;grid-template-columns:repeat(2,minmax(0,1fr))">
+        <div style="padding:var(--space-8);border-right:1px solid var(--color-divider)">
+          <div style="font-family:var(--font-heading);font-size:11.5px;letter-spacing:0.14em;text-transform:uppercase;color:var(--color-accent-700);margin-bottom:var(--space-4)">Project 1 · 파빌리온</div>
+          <div style="padding:var(--space-3) 0;border-bottom:1px solid var(--color-divider)">
+            <div style="font-family:var(--font-heading);font-size:18px;line-height:1.35;margin-bottom:4px">한국의 정자(亭子)</div>
+            <p style="text-align:justify;font-size:13px;line-height:1.75;margin:0;color:color-mix(in srgb, var(--color-text) 74%, transparent)">기능이 없는데 사람이 모이는 구조. 기둥·지붕·마루뿐이다. 첫 시간에 가장 먼저 볼 사례.</p>
+          </div>
+          <div style="padding:var(--space-3) 0;border-bottom:1px solid var(--color-divider)">
+            <div style="font-family:var(--font-heading);font-size:18px;line-height:1.35;margin-bottom:4px">미스 반 데어 로에, 바르셀로나 파빌리온 (1929)</div>
+            <p style="text-align:justify;font-size:13px;line-height:1.75;margin:0;color:color-mix(in srgb, var(--color-text) 74%, transparent)">벽의 '배치'만으로 만들어지는 공간. 대리석·유리·물의 재료 대비.</p>
+          </div>
+          <div style="padding:var(--space-3) 0;border-bottom:1px solid var(--color-divider)">
+            <div style="font-family:var(--font-heading);font-size:18px;line-height:1.35;margin-bottom:4px">소우 후지모토, 서펜타인 파빌리온 (2013)</div>
+            <p style="text-align:justify;font-size:13px;line-height:1.75;margin:0;color:color-mix(in srgb, var(--color-text) 74%, transparent)">격자의 조작. 같은 단위를 쌓아 만든 덩어리 — 3m 그리드 과제와 직결된다.</p>
+          </div>
+          <div style="padding:var(--space-3) 0;border-bottom:1px solid var(--color-divider)">
+            <div style="font-family:var(--font-heading);font-size:18px;line-height:1.35;margin-bottom:4px">페터 춤토르, 서펜타인 파빌리온 (2011)</div>
+            <p style="text-align:justify;font-size:13px;line-height:1.75;margin:0;color:color-mix(in srgb, var(--color-text) 74%, transparent)">둘러싸서 안을 만드는 방식. 재료의 어둠과 정원의 빛.</p>
+          </div>
+          <div style="padding:var(--space-3) 0;border-bottom:1px solid var(--color-divider)">
+            <div style="font-family:var(--font-heading);font-size:18px;line-height:1.35;margin-bottom:4px">SANAA, 서펜타인 파빌리온 (2009)</div>
+            <p style="text-align:justify;font-size:13px;line-height:1.75;margin:0;color:color-mix(in srgb, var(--color-text) 74%, transparent)">얇은 지붕과 가는 기둥. 재료가 형태를 어디까지 밀 수 있는가.</p>
+          </div>
+          <div style="padding:var(--space-3) 0;border-bottom:1px solid var(--color-divider)">
+            <div style="font-family:var(--font-heading);font-size:18px;line-height:1.35;margin-bottom:4px">서펜타인 파빌리온 시리즈 전체</div>
+            <p style="text-align:justify;font-size:13px;line-height:1.75;margin:0;color:color-mix(in srgb, var(--color-text) 74%, transparent)">같은 자리 · 기능 없음 · 다른 형태. 나란히 놓고 비교한다.</p>
+          </div>
+        </div>
+        <div style="padding:var(--space-8)">
+          <div style="font-family:var(--font-heading);font-size:11.5px;letter-spacing:0.14em;text-transform:uppercase;color:var(--color-accent-700);margin-bottom:var(--space-4)">Project 2 · 쉐어하우스</div>
+          <div style="padding:var(--space-3) 0;border-bottom:1px solid var(--color-divider)">
+            <div style="font-family:var(--font-heading);font-size:18px;line-height:1.35;margin-bottom:4px">나루세 · 이노쿠마, LT조시가야 (2013)</div>
+            <p style="text-align:justify;font-size:13px;line-height:1.75;margin:0;color:color-mix(in srgb, var(--color-text) 74%, transparent)">개인실이 공유공간을 3차원으로 감싸는 구성. 쉐어하우스 다이어그램의 교과서.</p>
+          </div>
+          <div style="padding:var(--space-3) 0;border-bottom:1px solid var(--color-divider)">
+            <div style="font-family:var(--font-heading);font-size:18px;line-height:1.35;margin-bottom:4px">SANAA(니시자와 류에), 모리야마 주택 (2005)</div>
+            <p style="text-align:justify;font-size:13px;line-height:1.75;margin:0;color:color-mix(in srgb, var(--color-text) 74%, transparent)">하나의 집을 여러 동으로 쪼개 그 사이를 공유공간으로 쓰는 방식.</p>
+          </div>
+          <div style="padding:var(--space-3) 0;border-bottom:1px solid var(--color-divider)">
+            <div style="font-family:var(--font-heading);font-size:18px;line-height:1.35;margin-bottom:4px">소우 후지모토, House NA (2011)</div>
+            <p style="text-align:justify;font-size:13px;line-height:1.75;margin:0;color:color-mix(in srgb, var(--color-text) 74%, transparent)">높이 차이만으로 영역을 나누기. 벽 없이 공간을 구분하는 훈련.</p>
+          </div>
+          <div style="padding:var(--space-3) 0;border-bottom:1px solid var(--color-divider)">
+            <div style="font-family:var(--font-heading);font-size:18px;line-height:1.35;margin-bottom:4px">국내 리모델링형 쉐어하우스</div>
+            <p style="text-align:justify;font-size:13px;line-height:1.75;margin:0;color:color-mix(in srgb, var(--color-text) 74%, transparent)">현실의 면적과 예산 감각. 이상적 사례만 보면 안이 비현실적으로 커진다.</p>
+          </div>
+          <div style="padding:var(--space-3) 0;border-bottom:1px solid var(--color-divider)">
+            <div style="font-family:var(--font-heading);font-size:18px;line-height:1.35;margin-bottom:4px">안양예술공원 답사 (검토 중)</div>
+            <p style="text-align:justify;font-size:13px;line-height:1.75;margin:0;color:color-mix(in srgb, var(--color-text) 74%, transparent)">학교에서 가까운 실제 파빌리온·공공예술 구조물. 개방 여부 확인 후 현장 수업으로 진행.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="a06" style="border-bottom:1px solid var(--sheet-line)">
+      <div style="display:flex;align-items:baseline;justify-content:space-between;gap:var(--space-6);padding:var(--space-4) var(--space-8);border-bottom:1px solid var(--color-divider)">
+        <h2 style="font-size:30px;font-weight:400;margin:0">수업 운영 방침</h2>
+        <div style="font-family:var(--font-heading);font-size:11.5px;letter-spacing:0.16em;color:var(--color-accent-700);font-feature-settings:'tnum'">A-06</div>
+      </div>
+      <div class="g-rules" style="display:grid;grid-template-columns:repeat(3,minmax(0,1fr))">
+        <div style="padding:var(--space-6);border-right:1px solid var(--color-divider);border-bottom:1px solid var(--color-divider)">
+          <div style="display:flex;align-items:baseline;gap:var(--space-3);margin-bottom:var(--space-2)">
+            <span style="font-family:var(--font-heading);font-size:11.5px;letter-spacing:0.14em;color:var(--color-accent-700);font-feature-settings:'tnum'">01</span>
+            <span style="font-family:var(--font-heading);font-size:20px">출결</span>
+          </div>
+          <p style="text-align:justify;font-size:13.5px;line-height:1.85;margin:0;color:color-mix(in srgb, var(--color-text) 80%, transparent)">스튜디오는 함께 작업하는 시간입니다. 총 시간의 1/4을 초과해 결석하면 F 처리되며, 지각 3회는 결석 1회로 봅니다.</p>
+        </div>
+        <div style="padding:var(--space-6);border-right:1px solid var(--color-divider);border-bottom:1px solid var(--color-divider)">
+          <div style="display:flex;align-items:baseline;gap:var(--space-3);margin-bottom:var(--space-2)">
+            <span style="font-family:var(--font-heading);font-size:11.5px;letter-spacing:0.14em;color:var(--color-accent-700);font-feature-settings:'tnum'">02</span>
+            <span style="font-family:var(--font-heading);font-size:20px">매주 만들어 온다</span>
+          </div>
+          <p style="text-align:justify;font-size:13.5px;line-height:1.85;margin:0;color:color-mix(in srgb, var(--color-text) 80%, transparent)">만들어 온 것이 있어야 크리틱이 성립합니다. 특히 3–4주에는 1:50 모형을 매주 3개씩 만들어 옵니다. 미완성이라도 반드시 가지고 오십시오.</p>
+        </div>
+        <div style="padding:var(--space-6);border-bottom:1px solid var(--color-divider)">
+          <div style="display:flex;align-items:baseline;gap:var(--space-3);margin-bottom:var(--space-2)">
+            <span style="font-family:var(--font-heading);font-size:11.5px;letter-spacing:0.14em;color:var(--color-accent-700);font-feature-settings:'tnum'">03</span>
+            <span style="font-family:var(--font-heading);font-size:20px">전체 크리틱</span>
+          </div>
+          <p style="text-align:justify;font-size:13.5px;line-height:1.85;margin:0;color:color-mix(in srgb, var(--color-text) 80%, transparent)">남의 안을 보는 것이 자기 안을 고치는 것보다 빨리 배웁니다. 자기 차례가 아니어도 자리를 지키고, 질문을 하나씩 준비해 오십시오.</p>
+        </div>
+        <div style="padding:var(--space-6);border-right:1px solid var(--color-divider)">
+          <div style="display:flex;align-items:baseline;gap:var(--space-3);margin-bottom:var(--space-2)">
+            <span style="font-family:var(--font-heading);font-size:11.5px;letter-spacing:0.14em;color:var(--color-accent-700);font-feature-settings:'tnum'">04</span>
+            <span style="font-family:var(--font-heading);font-size:20px">손이 먼저</span>
+          </div>
+          <p style="text-align:justify;font-size:13.5px;line-height:1.85;margin:0;color:color-mix(in srgb, var(--color-text) 80%, transparent)">1–11주는 손과 모형으로만 진행합니다. 디지털 도구는 12주부터, 결정된 설계를 정확히 옮기는 도구로만 씁니다.</p>
+        </div>
+        <div style="padding:var(--space-6);border-right:1px solid var(--color-divider)">
+          <div style="display:flex;align-items:baseline;gap:var(--space-3);margin-bottom:var(--space-2)">
+            <span style="font-family:var(--font-heading);font-size:11.5px;letter-spacing:0.14em;color:var(--color-accent-700);font-feature-settings:'tnum'">05</span>
+            <span style="font-family:var(--font-heading);font-size:20px">제출 지연</span>
+          </div>
+          <p style="text-align:justify;font-size:13.5px;line-height:1.85;margin:0;color:color-mix(in srgb, var(--color-text) 80%, transparent)">제출 기한 이후 24시간마다 해당 과제 점수의 10%를 감점합니다. 3일 이후 제출은 받지 않습니다.</p>
+        </div>
+        <div style="padding:var(--space-6)">
+          <div style="display:flex;align-items:baseline;gap:var(--space-3);margin-bottom:var(--space-2)">
+            <span style="font-family:var(--font-heading);font-size:11.5px;letter-spacing:0.14em;color:var(--color-accent-700);font-feature-settings:'tnum'">06</span>
+            <span style="font-family:var(--font-heading);font-size:20px">표절과 AI</span>
+          </div>
+          <p style="text-align:justify;font-size:13.5px;line-height:1.85;margin:0;color:color-mix(in srgb, var(--color-text) 80%, transparent)">사례 참조는 출처를 밝히면 권장합니다. 생성 이미지·도면을 자기 작업으로 제출하는 것은 표절로 처리합니다.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="a07">
+      <div style="display:flex;align-items:baseline;justify-content:space-between;gap:var(--space-6);padding:var(--space-4) var(--space-8);border-bottom:1px solid var(--color-divider)">
+        <h2 style="font-size:30px;font-weight:400;margin:0">자주 묻는 질문</h2>
+        <div style="font-family:var(--font-heading);font-size:11.5px;letter-spacing:0.16em;color:var(--color-accent-700);font-feature-settings:'tnum'">A-07</div>
+      </div>
+      <div class="g-2col" style="display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,0.75fr)">
+        <div style="padding:var(--space-8);border-right:1px solid var(--color-divider)">
+          <details style="border-bottom:1px solid var(--color-divider)">
+            <summary style="cursor:pointer;padding:var(--space-4) 0;font-family:var(--font-heading);font-size:18px;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,20px);gap:var(--space-4)">
+              <span>설계를 처음 하는데 따라갈 수 있을까요?</span>
+              <span style="color:var(--color-accent);font-size:14px;text-align:right">＋</span>
+            </summary>
+            <p style="text-align:justify;font-size:13.5px;line-height:1.9;padding:0 0 var(--space-4);margin:0;color:color-mix(in srgb, var(--color-text) 80%, transparent)">이 수업은 설계를 처음 배우는 학생을 전제로 만들어졌습니다. 앞의 8주는 방의 개수도, 법규도, 설비도 없이 덩어리만 다룹니다. 필요한 것은 경험이 아니라 매주 만들어 오는 성실함입니다.</p>
+          </details>
+          <details style="border-bottom:1px solid var(--color-divider)">
+            <summary style="cursor:pointer;padding:var(--space-4) 0;font-family:var(--font-heading);font-size:18px;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,20px);gap:var(--space-4)">
+              <span>파빌리온에 기능이 없다는 게 무슨 뜻인가요?</span>
+              <span style="color:var(--color-accent);font-size:14px;text-align:right">＋</span>
+            </summary>
+            <p style="text-align:justify;font-size:13.5px;line-height:1.9;padding:0 0 var(--space-4);margin:0;color:color-mix(in srgb, var(--color-text) 80%, transparent)">기능이 없는 것이 아니라, 기능이 형태를 지시하지 않는다는 뜻입니다. 방의 목록이 주어지지 않을 뿐이고 대신 대지·재료·몸이 근거가 됩니다. 나무 그늘에는 '쉼터'라는 이름표가 없지만 사람이 앉습니다. 그 그늘을 손으로 만드는 일이라고 생각하면 됩니다.</p>
+          </details>
+          <details style="border-bottom:1px solid var(--color-divider)">
+            <summary style="cursor:pointer;padding:var(--space-4) 0;font-family:var(--font-heading);font-size:18px;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,20px);gap:var(--space-4)">
+              <span>9m 큐브를 꽉 채워야 하나요?</span>
+              <span style="color:var(--color-accent);font-size:14px;text-align:right">＋</span>
+            </summary>
+            <p style="text-align:justify;font-size:13.5px;line-height:1.9;padding:0 0 var(--space-4);margin:0;color:color-mix(in srgb, var(--color-text) 80%, transparent)">아닙니다. 9m 큐브는 채워야 할 부피가 아니라 넘지 말아야 할 한계입니다. 3m 그리드 27칸 중 몇 칸을 쓸지는 각자의 판단이고, 그 판단의 이유가 곧 평가 대상입니다.</p>
+          </details>
+          <details style="border-bottom:1px solid var(--color-divider)">
+            <summary style="cursor:pointer;padding:var(--space-4) 0;font-family:var(--font-heading);font-size:18px;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,20px);gap:var(--space-4)">
+              <span>캐드를 못 하면 불리한가요?</span>
+              <span style="color:var(--color-accent);font-size:14px;text-align:right">＋</span>
+            </summary>
+            <p style="text-align:justify;font-size:13.5px;line-height:1.9;padding:0 0 var(--space-4);margin:0;color:color-mix(in srgb, var(--color-text) 80%, transparent)">1–11주는 손과 모형으로만 진행하므로 전혀 불리하지 않습니다. 디지털 도구는 12주부터 쓰며 별도 튜토리얼을 제공합니다. 도구가 아니라 판단을 먼저 배웁니다.</p>
+          </details>
+          <details style="border-bottom:1px solid var(--color-divider)">
+            <summary style="cursor:pointer;padding:var(--space-4) 0;font-family:var(--font-heading);font-size:18px;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,20px);gap:var(--space-4)">
+              <span>모형 재료비는 얼마나 드나요?</span>
+              <span style="color:var(--color-accent);font-size:14px;text-align:right">＋</span>
+            </summary>
+            <p style="text-align:justify;font-size:13.5px;line-height:1.9;padding:0 0 var(--space-4);margin:0;color:color-mix(in srgb, var(--color-text) 80%, transparent)">학기 전체 5~8만 원 수준입니다. 1:50 스터디를 여러 개 만들지만 폼보드와 라이싱지는 저렴하고, 학과 공동 구매로 단가를 낮춥니다. 남은 재료는 스튜디오 공용함에 모아 함께 씁니다.</p>
+          </details>
+          <details style="border-bottom:1px solid var(--color-divider)">
+            <summary style="cursor:pointer;padding:var(--space-4) 0;font-family:var(--font-heading);font-size:18px;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,20px);gap:var(--space-4)">
+              <span>쉐어하우스 거주자는 마음대로 정해도 되나요?</span>
+              <span style="color:var(--color-accent);font-size:14px;text-align:right">＋</span>
+            </summary>
+            <p style="text-align:justify;font-size:13.5px;line-height:1.9;padding:0 0 var(--space-4);margin:0;color:color-mix(in srgb, var(--color-text) 80%, transparent)">자유롭게 정하되 근거가 필요합니다. '왜 하필 안양동 934-11에 사는가'에 답할 수 있어야 하고, 9주 답사에서 찾은 것이 그 근거가 됩니다. 10주에 설정의 타당성을 함께 검증합니다.</p>
+          </details>
+        </div>
+        <div style="padding:var(--space-8)">
+          <div style="font-family:var(--font-heading);font-size:11.5px;letter-spacing:0.16em;text-transform:uppercase;color:var(--color-accent-700)">담당 교수</div>
+          <div style="font-family:var(--font-heading);font-size:30px;margin:var(--space-3) 0 var(--space-4);padding-bottom:var(--space-3);border-bottom:1px solid var(--color-text)">담당 교수</div>
+          <div style="display:grid;grid-template-columns:minmax(0,86px) minmax(0,1fr);gap:var(--space-3);padding:var(--space-2) 0;border-bottom:1px solid var(--color-divider);font-size:13px;line-height:1.7">
+            <span style="font-family:var(--font-heading);font-size:11.5px;letter-spacing:0.1em;text-transform:uppercase;color:color-mix(in srgb, var(--color-text) 55%, transparent);padding-top:3px">연구실</span>
+            <span style="font-feature-settings:'tnum';color:color-mix(in srgb, var(--color-text) 86%, transparent)">산업디자인관 4층 407호</span>
+          </div>
+          <div style="display:grid;grid-template-columns:minmax(0,86px) minmax(0,1fr);gap:var(--space-3);padding:var(--space-2) 0;border-bottom:1px solid var(--color-divider);font-size:13px;line-height:1.7">
+            <span style="font-family:var(--font-heading);font-size:11.5px;letter-spacing:0.1em;text-transform:uppercase;color:color-mix(in srgb, var(--color-text) 55%, transparent);padding-top:3px">오피스아워</span>
+            <span style="font-feature-settings:'tnum';color:color-mix(in srgb, var(--color-text) 86%, transparent)">수 14:00–16:00</span>
+          </div>
+          <div style="display:grid;grid-template-columns:minmax(0,86px) minmax(0,1fr);gap:var(--space-3);padding:var(--space-2) 0;border-bottom:1px solid var(--color-divider);font-size:13px;line-height:1.7">
+            <span style="font-family:var(--font-heading);font-size:11.5px;letter-spacing:0.1em;text-transform:uppercase;color:color-mix(in srgb, var(--color-text) 55%, transparent);padding-top:3px">메일</span>
+            <span style="font-feature-settings:'tnum';color:color-mix(in srgb, var(--color-text) 86%, transparent)">studio@yeonsung.ac.kr</span>
+          </div>
+          <div style="display:grid;grid-template-columns:minmax(0,86px) minmax(0,1fr);gap:var(--space-3);padding:var(--space-2) 0;border-bottom:1px solid var(--color-divider);font-size:13px;line-height:1.7">
+            <span style="font-family:var(--font-heading);font-size:11.5px;letter-spacing:0.1em;text-transform:uppercase;color:color-mix(in srgb, var(--color-text) 55%, transparent);padding-top:3px">스튜디오</span>
+            <span style="font-feature-settings:'tnum';color:color-mix(in srgb, var(--color-text) 86%, transparent)">설계실 3-2 (24시간 개방)</span>
+          </div>
+          <p style="font-size:12.5px;line-height:1.85;margin:var(--space-4) 0 0;text-align:justify;color:color-mix(in srgb, var(--color-text) 70%, transparent)">과제 상담은 오피스아워에 예약 없이 오시면 됩니다. 그 외 시간은 메일로 먼저 연락 주세요.</p>
+        </div>
+      </div>
+    </section>
+
+    <footer style="border-top:1px solid var(--color-text);display:grid;grid-template-columns:repeat(3,minmax(0,1fr));font-size:12px;color:color-mix(in srgb, var(--color-text) 55%, transparent)">
+      <div style="padding:var(--space-4) var(--space-8);border-right:1px solid var(--color-divider)">연성대학교 건축학과 · 건축설계기초 Ⅱ</div>
+      <div style="padding:var(--space-4) var(--space-8);border-right:1px solid var(--color-divider);font-feature-settings:'tnum'">2026학년도 2학기 · SHEET A-00 ~ A-07</div>
+      <div style="padding:var(--space-4) var(--space-8);text-align:right">본 계획서는 학사 일정에 따라 조정될 수 있습니다.</div>
+    </footer>
   </div>
 </div>
-
-<!-- ============ TWO PARTS ============ -->
-<section>
-  <div class="wrap">
-    <div class="sec-head reveal">
-      <span class="eyebrow">01 · 한 학기의 구조</span>
-      <h2>같은 학기 안의 두 질문</h2>
-      <p>먼저 밖에서 보이는 덩어리를 손으로 다루고, 다음으로 그 덩어리 안에서 일어나는 일 — 동선과 공간 — 을 다룹니다. 대상도 규모도 매체도 다르지만, 세 개의 키워드가 그대로 이어집니다.</p>
-    </div>
-
-    <div class="parts-grid reveal">
-      <div class="part-col mass">
-        <div class="part-num">PART 1</div>
-        <h3>파빌리온</h3>
-        <div class="part-weeks">WEEK 01–08 · 매스를 다룬다</div>
-        <ul class="part-facts">
-          <li><span class="k">키워드</span><span class="v"><b>form · material · human scale</b></span></li>
-          <li><span class="k">대지</span><span class="v">연성대 문화관 앞마당 (캠퍼스 내)</span></li>
-          <li><span class="k">규모</span><span class="v">9 × 9 × 9 m 제약 상자</span></li>
-          <li><span class="k">매체</span><span class="v">손스케치 · 실물모형</span></li>
-          <li><span class="k">산출물</span><span class="v">8주차 1:20 실물모형</span></li>
-        </ul>
-      </div>
-      <div class="part-col space">
-        <div class="part-num">PART 2</div>
-        <h3>쉐어하우스</h3>
-        <div class="part-weeks">WEEK 09–15 · 공간과 동선을 다룬다</div>
-        <ul class="part-facts">
-          <li><span class="k">키워드</span><span class="v"><b>거주자 · 동선 · 공간</b></span></li>
-          <li><span class="k">대지</span><span class="v">안양시 만안구 안양동 934-11</span></li>
-          <li><span class="k">규모</span><span class="v">조건표로 별도 제시</span></li>
-          <li><span class="k">매체</span><span class="v">다이어그램 · 도면 · 디지털</span></li>
-          <li><span class="k">산출물</span><span class="v">15주차 A1 패널 + 도면세트</span></li>
-        </ul>
-      </div>
-    </div>
-
-    <div class="bridges reveal">
-      <div class="bridge">
-        <div class="bside from">form</div>
-        <svg class="bmid" width="22" height="16" viewBox="0 0 22 16" fill="none"><path d="M0 8h18M12 2l6 6-6 6" stroke="currentColor" stroke-width="1.5"/></svg>
-        <div class="bside to">공간의 배열</div>
-        <div class="bnote">형태를 조작하던 손이, 이제 방과 방의 관계를 조작한다</div>
-      </div>
-      <div class="bridge">
-        <div class="bside from">material</div>
-        <svg class="bmid" width="22" height="16" viewBox="0 0 22 16" fill="none"><path d="M0 8h18M12 2l6 6-6 6" stroke="currentColor" stroke-width="1.5"/></svg>
-        <div class="bside to">경계의 성격</div>
-        <div class="bnote">덩어리를 세우던 재료가, 이제 빛·시선·소리를 조절한다</div>
-      </div>
-      <div class="bridge">
-        <div class="bside from">human scale</div>
-        <svg class="bmid" width="22" height="16" viewBox="0 0 22 16" fill="none"><path d="M0 8h18M12 2l6 6-6 6" stroke="currentColor" stroke-width="1.5"/></svg>
-        <div class="bside to">동선</div>
-        <div class="bnote">몸의 크기를 재던 감각이, 이제 몸의 움직임을 재는 감각이 된다</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ============ THESIS ============ -->
-<section style="padding-top:64px; padding-bottom:64px;">
-  <div class="wrap thesis reveal">
-    <blockquote>“기능이 없는 것이 아니라,<br>기능이 형태를 지시하지 않는 것이다.”</blockquote>
-    <cite>PART 1 · 파빌리온의 출발점</cite>
-  </div>
-</section>
-
-<!-- ============ KEYWORDS ============ -->
-<section>
-  <div class="wrap">
-    <div class="sec-head reveal">
-      <span class="eyebrow">02 · 여섯 개의 키워드</span>
-      <h2>무엇을 배우는가보다,<br>어떤 질문에 답할 수 있게 되는가</h2>
-      <p>각 키워드는 크리틱에서 실제로 던지는 질문과 함께 존재합니다. 학생은 이 질문에 자기 언어로 답할 수 있어야 합니다.</p>
-    </div>
-
-    <div class="kw-group-label mass reveal"><span class="bar"></span>PART 1 — 매스를 세우는 키워드</div>
-    <div class="kw-grid reveal">
-      <div class="kw-card mass">
-        <div class="kw-name">form<br>형태</div>
-        <p class="kw-def">형태는 그리는 것이 아니라 조작하는 것. 자르고, 비우고, 세우고, 쌓고, 비튼다.</p>
-        <p class="kw-q">이 형태는 왜 이 형태여야 합니까? 여기서 하나를 빼면 무엇이 무너집니까?</p>
-      </div>
-      <div class="kw-card mass">
-        <div class="kw-name">material<br>재료</div>
-        <p class="kw-def">재료는 표면 마감이 아니라 형태를 성립시키는 조건. 한 장의 크기가 이음매의 위치를 정한다.</p>
-        <p class="kw-q">이 재료 한 장은 얼마나 큽니까? 그래서 이음매가 어디에 생깁니까?</p>
-      </div>
-      <div class="kw-card mass">
-        <div class="kw-name">human scale<br>휴먼스케일</div>
-        <p class="kw-def">크기는 도면의 숫자가 아니라 몸을 기준으로 판단한다. 모형에 사람을 세워 다시 조정한다.</p>
-        <p class="kw-q">사람이 여기 서면 무엇이 보이고 무엇이 가려집니까?</p>
-      </div>
-    </div>
-
-    <div class="kw-group-label space reveal"><span class="bar"></span>PART 2 — 그 안으로 들어가는 키워드</div>
-    <div class="kw-grid reveal">
-      <div class="kw-card space">
-        <div class="kw-name">거주자</div>
-        <p class="kw-def">프로그램을 받는 것이 아니라 직접 만든다. 누가 어떻게 사는지 정하면 공간의 목록이 따라 나온다.</p>
-        <p class="kw-q">이 사람들은 왜 굳이 같이 삽니까? 무엇을 나누고 무엇을 나누지 않습니까?</p>
-      </div>
-      <div class="kw-card space">
-        <div class="kw-name">동선</div>
-        <p class="kw-def">동선은 선이 아니라 시간과 순서. 현관에서 침대까지 겪는 장면의 연속으로 다룬다.</p>
-        <p class="kw-q">현관에서 내 방까지 가는 동안 누구와 마주칩니까?</p>
-      </div>
-      <div class="kw-card space">
-        <div class="kw-name">공간</div>
-        <p class="kw-def">방의 개수를 채우는 일이 아니라 성격이 다른 공간을 배열하는 일. 공유·반공유·개인의 세 단계.</p>
-        <p class="kw-q">이 공간은 누구의 것입니까? 옆 공간과 무엇으로 구분됩니까?</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ============ SITES ============ -->
-<section>
-  <div class="wrap">
-    <div class="sec-head reveal">
-      <span class="eyebrow">03 · 두 대지, 두 가지 배움</span>
-      <h2>대지를 읽는 방법도 함께 이행한다</h2>
-      <p>파빌리온의 대지는 매일 지나다니는 곳이라 몸으로 압니다. 쉐어하우스의 대지는 처음 가보는 곳이라 조사해서 압니다. 매스에서 공간으로 넘어가는 동안, 대지를 아는 방법도 관찰에서 조사로 넓어집니다.</p>
-    </div>
-    <div class="site-grid reveal">
-      <div class="site-card mass">
-        <div class="site-tag">Part 1 · Site</div>
-        <h3>연성대학교 문화관 앞마당</h3>
-        <p>캠퍼스 안이라는 점이 가장 큰 장점입니다. 학생이 매일 지나는 곳이므로 대지 조사를 자료가 아니라 관찰로 시킬 수 있습니다.</p>
-        <div class="site-how">아는 방법 — 관찰</div>
-      </div>
-      <div class="site-card space">
-        <div class="site-tag">Part 2 · Site</div>
-        <h3>안양시 만안구 안양동 934-11</h3>
-        <p>캠퍼스 밖 실제 지번입니다. 법규·이웃·도로라는 제약이 처음으로 주어지고, 대지를 자료로 읽는 법을 배웁니다.</p>
-        <div class="site-how">아는 방법 — 조사 + 답사</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ============ MILESTONES ============ -->
-<section>
-  <div class="wrap">
-    <div class="sec-head reveal">
-      <span class="eyebrow">04 · 두 개의 도달점</span>
-      <h2>학기는 두 번, 손에 잡히는 것을 만든다</h2>
-    </div>
-    <div class="milestones reveal">
-      <div class="milestone">
-        <span class="m-week">WEEK 08 · 중간평가</span>
-        <svg class="m-icon" viewBox="0 0 56 56" fill="none"><rect x="10" y="20" width="36" height="26" stroke="var(--mass)" stroke-width="2"/><path d="M10 20 20 8h26L46 20" stroke="var(--mass)" stroke-width="2" stroke-linejoin="round"/><path d="M20 8v26" stroke="var(--mass)" stroke-width="2"/></svg>
-        <h3>1:20 실물모형</h3>
-        <p>형태·재료·크기를 그렇게 결정한 이유를 자기 말로 설명할 수 있는 상태. “이 재료라서 이 형태가 가능했다”는 문장이 목표입니다.</p>
-      </div>
-      <div class="milestone">
-        <span class="m-week">WEEK 15 · 기말평가</span>
-        <svg class="m-icon" viewBox="0 0 56 56" fill="none"><rect x="6" y="8" width="44" height="40" stroke="var(--space-c)" stroke-width="2"/><path d="M13 18h30M13 26h30M13 34h18" stroke="var(--space-c)" stroke-width="2"/></svg>
-        <h3>A1 패널 + 도면세트</h3>
-        <p>거주자 설정 → 동선 → 공간 구성으로 이어지는 인과를 끊김 없이 설명할 수 있는 상태입니다.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ============ TIMELINE ============ -->
-<section>
-  <div class="wrap">
-    <div class="sec-head reveal">
-      <span class="eyebrow">05 · 15주 흐름</span>
-      <h2>매체는 손에서 시작해 디지털로 넘어간다</h2>
-      <p>디지털 도구는 설계를 하는 도구가 아니라, 결정된 설계를 정확히 옮기는 도구로 후반부에 등장합니다.</p>
-    </div>
-    <div class="timeline reveal">
-      <div class="tl-track" id="tlTrack">
-        <div class="tl-marker" style="left:3.33%;"><span class="flag"></span>OT</div>
-        <div class="tl-marker strong" style="left:30%;"><span class="flag"></span>1:1 테이핑</div>
-        <div class="tl-marker strong" style="left:50%;"><span class="flag"></span>중간평가</div>
-        <div class="tl-marker" style="left:56.6%;"><span class="flag"></span>대지 답사</div>
-        <div class="tl-marker strong" style="left:96.6%;"><span class="flag"></span>기말평가</div>
-      </div>
-      <div class="tl-legend">
-        <div class="lg"><span class="sw mass"></span>Part 1 · 파빌리온 (재료 실험 → 매스 스터디 → 실물모형)</div>
-        <div class="lg"><span class="sw space"></span>Part 2 · 쉐어하우스 (다이어그램 → 도면 → 패널)</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ============ FOOTER ============ -->
-<footer>
-  <div class="wrap">
-    <p class="foot-thesis reveal">덩어리를 다루는 법을 익히고,<br>그 안으로 들어간다.</p>
-    <div class="foot-meta">
-      <span>설계입문 스튜디오</span>
-      <span>PART 1 WEEK 01–08 · PART 2 WEEK 09–15</span>
-    </div>
-  </div>
-</footer>
-
-<script>
-  (function(){
-    var cells = document.querySelectorAll('.tl-track');
-    cells.forEach(function(track){
-      for(var i=1;i<=15;i++){
-        var cell = document.createElement('div');
-        var isSpace = i>=9;
-        cell.className = 'tl-cell ' + (isSpace ? 'space' : 'mass');
-        cell.innerHTML = '<span class="wk">'+ (i<10? '0'+i : i) +'</span>';
-        track.appendChild(cell);
-      }
-    });
-
-    var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    var items = document.querySelectorAll('.reveal');
-    if(reduce || !('IntersectionObserver' in window)){
-      items.forEach(function(el){ el.classList.add('in'); });
-      return;
-    }
-    var io = new IntersectionObserver(function(entries){
-      entries.forEach(function(entry){
-        if(entry.isIntersecting){
-          entry.target.classList.add('in');
-          io.unobserve(entry.target);
-        }
-      });
-    }, {threshold:0.12});
-    items.forEach(function(el){ io.observe(el); });
-  })();
-</script>
 </body>
 </html>
